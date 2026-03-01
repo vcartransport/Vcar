@@ -1,0 +1,262 @@
+import React from "react";
+// nodejs library that concatenates classes
+import classNames from "classnames";
+// @material-ui/core components
+import { makeStyles } from "@material-ui/core/styles";
+
+// core components
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
+import GridContainer from "../components/Grid/GridContainer";
+import GridItem from "../components/Grid/GridItem";
+import HeaderLinks from "../components/Header/HeaderLinks";
+import Parallax from "../components/Parallax/Parallax";
+import Button from "../components/CustomButtons/Button";
+import CustomInput from "../components/CustomInput/CustomInput";
+
+import styles from "../styles/jss/nextjs-material-kit/pages/landingPage";
+
+const useStyles = makeStyles((theme) => ({
+    ...styles,
+    section: {
+        padding: "70px 0",
+        textAlign: "center" as "center"
+    },
+    title: {
+        ...styles.title,
+        marginBottom: "1rem",
+        marginTop: "30px",
+        minHeight: "32px",
+        textDecoration: "none",
+        color: "#3C4858",
+        display: "inline-block",
+        position: "relative" as "relative"
+    },
+    description: {
+        color: "#999"
+    },
+    contactSection: {
+        padding: "70px 0",
+    },
+    infoSection: {
+        padding: "40px",
+        backgroundColor: "#2E3440", // Deep Navy/Slate
+        color: "#FFFFFF",
+        borderRadius: "10px",
+        boxShadow: "0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)",
+        textAlign: "left" as "left",
+        height: "100%"
+    },
+    infoTitle: {
+        ...styles.title,
+        color: "#FFFFFF",
+        marginTop: "0",
+        fontSize: "1.5rem",
+        marginBottom: "20px",
+        position: "relative" as "relative"
+    },
+    infoItem: {
+        display: "flex",
+        alignItems: "flex-start",
+        marginBottom: "25px",
+    },
+    infoIcon: {
+        marginRight: "20px",
+        fontSize: "20px",
+        color: "#f44336", // Brand Red
+        minWidth: "24px",
+        textAlign: "center" as "center"
+    },
+    infoText: {
+        fontSize: "1rem",
+        lineHeight: "1.5em",
+        margin: "0"
+    },
+    socialIcons: {
+        marginTop: "40px",
+        borderTop: "1px solid rgba(255, 255, 255, 0.1)",
+        paddingTop: "20px"
+    },
+    socialButton: {
+        marginRight: "10px",
+        "& i": {
+            fontSize: "20px"
+        }
+    },
+    formSection: {
+        padding: "40px 20px",
+        textAlign: "left" as "left"
+    },
+    formTitle: {
+        ...styles.title,
+        color: "#3C4858",
+        marginTop: "0",
+        fontSize: "1.5rem",
+        marginBottom: "10px",
+        position: "relative" as "relative"
+    },
+    formSub: {
+        color: "#999",
+        marginBottom: "40px"
+    },
+    main: {
+        background: "#FFFFFF",
+        position: "relative" as "relative",
+        zIndex: 3
+    },
+    container: {
+        ...styles.container,
+        zIndex: 12,
+        position: "relative" as "relative"
+    }
+}));
+
+export default function ContactPage(props) {
+    const classes = useStyles();
+    const { ...rest } = props;
+    return (
+        <div>
+            <Header
+                color="white"
+                brand="Vcar Convoyage"
+                rightLinks={<HeaderLinks />}
+                fixed
+                {...rest}
+            />
+            <div className={classes.main} style={{ paddingTop: "80px" }}>
+                <div className={classes.container}>
+                    <div className={classes.contactSection}>
+                        <GridContainer>
+                            <GridItem xs={12} sm={12} md={5}>
+                                <div className={classes.infoSection}>
+                                    <h2 className={classes.infoTitle}>Informations de Contact</h2>
+
+                                    <div className={classes.infoItem}>
+                                        <i className={classNames("fas fa-map-marker-alt", classes.infoIcon)} />
+                                        <div className={classes.infoText}>
+                                            <strong>Paris, France</strong><br />
+                                            Service disponible dans toute la France
+                                        </div>
+                                    </div>
+
+                                    <div className={classes.infoItem}>
+                                        <i className={classNames("fas fa-phone", classes.infoIcon)} />
+                                        <div className={classes.infoText}>
+                                            <strong>Téléphone</strong><br />
+                                            <a href="tel:+33123456789" style={{ color: "inherit", textDecoration: "none" }}>01 23 45 67 89</a>
+                                        </div>
+                                    </div>
+
+                                    <div className={classes.infoItem}>
+                                        <i className={classNames("fas fa-envelope", classes.infoIcon)} />
+                                        <div className={classes.infoText}>
+                                            <strong>Email</strong><br />
+                                            <a href="mailto:contact@vcar-convoyage.fr" style={{ color: "inherit", textDecoration: "none" }}>contact@vcar-convoyage.fr</a>
+                                        </div>
+                                    </div>
+
+                                    <div className={classes.infoItem}>
+                                        <i className={classNames("fas fa-clock", classes.infoIcon)} />
+                                        <div className={classes.infoText}>
+                                            <strong>Horaires</strong><br />
+                                            Lundi - Vendredi: 09h00 - 18h00<br />
+                                            Samedi: 10h00 - 16h00
+                                        </div>
+                                    </div>
+
+                                    <div className={classes.socialIcons}>
+                                        <Button justIcon round color="transparent" simple className={classes.socialButton}>
+                                            <i className="fab fa-facebook-f" style={{ color: "white" }} />
+                                        </Button>
+                                        <Button justIcon round color="transparent" simple className={classes.socialButton}>
+                                            <i className="fab fa-instagram" style={{ color: "white" }} />
+                                        </Button>
+                                        <Button justIcon round color="transparent" simple className={classes.socialButton}>
+                                            <i className="fab fa-linkedin-in" style={{ color: "white" }} />
+                                        </Button>
+                                    </div>
+                                </div>
+                            </GridItem>
+
+                            <GridItem xs={12} sm={12} md={7}>
+                                <div className={classes.formSection}>
+                                    <h2 className={classes.formTitle}>Demander un Devis Gratuit</h2>
+                                    <p className={classes.formSub}>
+                                        Remplissez le formulaire ci-dessous et nos experts vous répondront sous 24h.
+                                    </p>
+                                    <form>
+                                        <GridContainer>
+                                            <GridItem xs={12} sm={6}>
+                                                <CustomInput
+                                                    labelText="Nom Complet"
+                                                    id="name"
+                                                    formControlProps={{
+                                                        fullWidth: true
+                                                    }}
+                                                />
+                                            </GridItem>
+                                            <GridItem xs={12} sm={6}>
+                                                <CustomInput
+                                                    labelText="Email"
+                                                    id="email"
+                                                    formControlProps={{
+                                                        fullWidth: true
+                                                    }}
+                                                />
+                                            </GridItem>
+                                            <GridItem xs={12}>
+                                                <CustomInput
+                                                    labelText="Type de transport (Trajet court, Longue distance...)"
+                                                    id="subject"
+                                                    formControlProps={{
+                                                        fullWidth: true
+                                                    }}
+                                                />
+                                            </GridItem>
+                                            <GridItem xs={12}>
+                                                <CustomInput
+                                                    labelText="Détails de votre demande (Véhicule, départ, arrivée...)"
+                                                    id="message"
+                                                    formControlProps={{
+                                                        fullWidth: true
+                                                    }}
+                                                    inputProps={{
+                                                        multiline: true,
+                                                        rows: 4
+                                                    }}
+                                                />
+                                            </GridItem>
+                                            <GridItem xs={12}>
+                                                <div style={{ marginTop: "20px" }}>
+                                                    <Button color="danger" size="lg">
+                                                        Envoyer la Demande
+                                                    </Button>
+                                                </div>
+                                            </GridItem>
+                                        </GridContainer>
+                                    </form>
+                                </div>
+                            </GridItem>
+                        </GridContainer>
+                    </div>
+
+                    <div style={{ marginTop: "40px", marginBottom: "60px" }}>
+                        <h3 className={classes.title} style={{ textAlign: "center", marginBottom: "40px" }}>Notre Zone d'Intervention</h3>
+                        <div style={{ width: "100%", height: "450px", borderRadius: "10px", overflow: "hidden", boxShadow: "0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)" }}>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9916256937595!2d2.2922926155823004!3d48.85837360866201!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sTour%20Eiffel!5e0!3m2!1sfr!2sfr!4v1645812345678!5m2!1sfr!2sfr"
+                                width="100%"
+                                height="100%"
+                                style={{ border: 0 }}
+                                allowFullScreen={true}
+                                loading="lazy"
+                            ></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <Footer />
+        </div>
+    );
+}
+
