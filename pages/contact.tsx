@@ -134,8 +134,7 @@ export default function ContactPage(props) {
                                     <div className={classes.infoItem}>
                                         <i className={classNames("fas fa-map-marker-alt", classes.infoIcon)} />
                                         <div className={classes.infoText}>
-                                            <strong>Paris, France</strong><br />
-                                            Service disponible dans toute la France
+                                            <strong>Île-de-France (Service National)</strong>
                                         </div>
                                     </div>
 
@@ -143,7 +142,7 @@ export default function ContactPage(props) {
                                         <i className={classNames("fas fa-phone", classes.infoIcon)} />
                                         <div className={classes.infoText}>
                                             <strong>Téléphone</strong><br />
-                                            <a href="tel:+33123456789" style={{ color: "inherit", textDecoration: "none" }}>01 23 45 67 89</a>
+                                            <a href="tel:+33765595877" style={{ color: "inherit", textDecoration: "none" }}>07 65 59 58 77</a>
                                         </div>
                                     </div>
 
@@ -151,7 +150,7 @@ export default function ContactPage(props) {
                                         <i className={classNames("fas fa-envelope", classes.infoIcon)} />
                                         <div className={classes.infoText}>
                                             <strong>Email</strong><br />
-                                            <a href="mailto:contact@vcar-convoyage.fr" style={{ color: "inherit", textDecoration: "none" }}>contact@vcar-convoyage.fr</a>
+                                            <a href="mailto:contact@v-car.company" style={{ color: "inherit", textDecoration: "none" }}>contact@v-car.company</a>
                                         </div>
                                     </div>
 
@@ -159,8 +158,7 @@ export default function ContactPage(props) {
                                         <i className={classNames("fas fa-clock", classes.infoIcon)} />
                                         <div className={classes.infoText}>
                                             <strong>Horaires</strong><br />
-                                            Lundi - Vendredi: 09h00 - 18h00<br />
-                                            Samedi: 10h00 - 16h00
+                                            Lun - Ven: 09h00 - 18h00
                                         </div>
                                     </div>
 
