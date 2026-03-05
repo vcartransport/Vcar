@@ -52,7 +52,7 @@ export default function VCarServicesSection() {
                         </div>
                         <h3 className={classes.cardTitle}>W Garage + Assurance</h3>
                         <p className={classes.cardDescription}>
-                            Garage W agréé avec assurance tous risques incluse pour une
+                            W Garage agréé avec assurance tous risques incluse pour une
                             protection maximale de votre véhicule pendant le transport.
                         </p>
                     </div>

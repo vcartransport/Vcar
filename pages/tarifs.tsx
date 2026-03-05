@@ -170,7 +170,7 @@ export default function TarifsPage(props) {
                                 <h1 className={classes.title}>Nos Tarifs HT</h1>
                                 <h4 className={classes.description}>
                                     Transparence totale sur nos prix de convoyage.
-                                    Péages et assurance W garage inclus dans nos tarifs kilométriques.
+                                    Péages, carburant et assurance W garage inclus dans nos tarifs kilométriques.
                                 </h4>
                                 <div style={{ marginTop: "20px" }}>
                                     <span className={classes.badge}>Péages inclus</span>
@@ -187,7 +187,7 @@ export default function TarifsPage(props) {
                             <GridItem xs={12} md={6}>
                                 <h3 className={classes.title} style={{ textAlign: "left" }}>VL -3,5 T (Classe 1 & 2)</h3>
                                 <p className={classes.description} style={{ textAlign: "left" }}>
-                                    Toutes marques, utilitaires type 3 à 8 M3.
+                                    Toutes marques VL, utilitaires classe 2 de 3 à 8 M3.
                                 </p>
                                 <TableContainer component={Paper} className={classes.tableContainer}>
                                     <Table aria-label="tarifs vl">
@@ -268,9 +268,11 @@ export default function TarifsPage(props) {
                                     <ul className={classes.description} style={{ paddingLeft: "20px" }}>
                                         <li>Tous les tarifs sont indiqués en Hors Taxes (HT).</li>
                                         <li><strong>Péages compris</strong> dans le tarif affiché.</li>
+                                        <li>Tarifs <strong>carburant compris</strong>.</li>
                                         <li><strong>Assurance W garage comprise</strong>.</li>
-                                        <li>Tarifs <strong>hors carburant</strong> (à la charge du client).</li>
+                                        <li>État des lieux digital avec <strong>WeProov</strong></li>
                                         <li>Forfait de 100 € HT pour les livraisons de moins de 50km (Classes 1 et 2).</li>
+                                        <li></li>
                                     </ul>
                                     <div className={classes.ctaSection} style={{ marginTop: "20px", textAlign: "left", padding: "20px" }}>
                                         <p className={classes.description}>Besoin d'un devis précis ?</p>

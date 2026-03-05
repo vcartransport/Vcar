@@ -157,7 +157,7 @@ export default function AboutPage(props) {
                             <GridItem xs={12} sm={6} md={3}>
                                 <InfoArea
                                     title="Transfert Professionnel"
-                                    description="Constructeurs, loueurs, entreprises... Transfert adapté à vos besoins."
+                                    description="Constructeurs, loueurs, entreprises... Transfert adapté à vos besoins, transfert de flottes gros volumes."
                                     icon={LocalShipping}
                                     iconColor="success"
                                     vertical
