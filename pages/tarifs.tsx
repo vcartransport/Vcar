@@ -272,7 +272,7 @@ export default function TarifsPage(props) {
                                         <li><strong>Assurance W garage comprise</strong>.</li>
                                         <li>État des lieux digital avec <strong>WeProov</strong></li>
                                         <li>Forfait de 100 € HT pour les livraisons de moins de 50km (Classes 1 et 2).</li>
-                                        <li></li>
+                    
                                     </ul>
                                     <div className={classes.ctaSection} style={{ marginTop: "20px", textAlign: "left", padding: "20px" }}>
                                         <p className={classes.description}>Besoin d'un devis précis ?</p>
