@@ -1,5 +1,6 @@
 import React, { ReactElement } from "react";
 import Link from "next/link";
+import Image from "next/image";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // nodejs library to set properties for components
@@ -63,8 +64,17 @@ export default function Header(props: HeaderProps) {
     [classes.fixed]: fixed,
   });
   const brandComponent = (
-    <Link href="/components" as="/components">
-      <Button className={classes.title}>{brand}</Button>
+    <Link href="/" as="/">
+      <Button className={classes.title} style={{ padding: "5px 15px", height: "auto" }}>
+        <svg width="200" height="46" viewBox="0 0 260 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g transform="translate(5, 5)">
+            <path d="M0 0 H14 L26 36 L18 42 Z" fill="currentColor" />
+            <path d="M18 48 L42 0 H54 L24 56 Z" fill="currentColor" />
+          </g>
+          <text x="65" y="28" fontFamily="system-ui, -apple-system, sans-serif" fontSize="24" fontWeight="900" fill="currentColor" letterSpacing="2">V-CAR</text>
+          <text x="65" y="46" fontFamily="system-ui, -apple-system, sans-serif" fontSize="12" fontWeight="800" fill="currentColor" letterSpacing="4.5">TRANSPORT</text>
+        </svg>
+      </Button>
     </Link>
   );
   return (
@@ -115,6 +125,23 @@ export default function Header(props: HeaderProps) {
 
 export interface HeaderProps {
   color?:
+  | "primary"
+  | "info"
+  | "success"
+  | "warning"
+  | "danger"
+  | "transparent"
+  | "white"
+  | "rose"
+  | "dark";
+  rightLinks?: ReactElement;
+  leftLinks?: ReactElement;
+  brand: string;
+  fixed?: boolean;
+  absolute?: boolean;
+  changeColorOnScroll?: {
+    height: number;
+    color:
     | "primary"
     | "info"
     | "success"
@@ -124,22 +151,5 @@ export interface HeaderProps {
     | "white"
     | "rose"
     | "dark";
-  rightLinks?: ReactElement;
-  leftLinks?: ReactElement;
-  brand: string;
-  fixed?: boolean;
-  absolute?: boolean;
-  changeColorOnScroll?: {
-    height: number;
-    color:
-      | "primary"
-      | "info"
-      | "success"
-      | "warning"
-      | "danger"
-      | "transparent"
-      | "white"
-      | "rose"
-      | "dark";
   };
 }

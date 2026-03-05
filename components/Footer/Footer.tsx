@@ -30,7 +30,7 @@ export default function Footer(props: FooterProps) {
           {/* Column 1: Brand */}
           <GridItem xs={12} sm={12} md={4}>
             <div className={classes.brandContainer}>
-              <span className={classes.brandName}>Vcar Convoyage</span>
+              <span className={classes.brandName}>V-car Convoyage</span>
               <p className={classes.brandDesc}>
                 Votre partenaire de confiance pour le convoyage de véhicules professionnels et particuliers partout en France. Excellence, ponctualité et sécurité.
               </p>
@@ -73,7 +73,7 @@ export default function Footer(props: FooterProps) {
             <div className={classes.contactContainer}>
               <div className={classes.contactItem}>
                 <i className={classNames("fas fa-map-marker-alt", classes.contactIcon)} />
-                <span>Île-de-France (Service National)</span>
+                <span>24 avenue du Prado, 13006 Marseille</span>
               </div>
               <div className={classes.contactItem}>
                 <i className={classNames("fas fa-phone", classes.contactIcon)} />
@@ -85,14 +85,20 @@ export default function Footer(props: FooterProps) {
               </div>
               <div className={classes.contactItem}>
                 <i className={classNames("fas fa-clock", classes.contactIcon)} />
-                <span>Lun - Ven: 09h00 - 18h00</span>
+                <span>Lun - Sam: 08h00 - 19h00</span>
               </div>
             </div>
           </GridItem>
         </GridContainer>
 
-        <div className={classes.bottomBar}>
-          &copy; {1900 + new Date().getYear()} Vcar Convoyage. Tous droits réservés.
+
+        <div className={classes.bottomBar} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap" }}>
+          <span>
+            &copy; {1900 + new Date().getYear()} V-car Convoyage. Tous droits réservés.
+          </span>
+          <span style={{ fontSize: "0.8em" }}>
+            Développé par <a href="https://mickaelcode.com" target="_blank" rel="noopener noreferrer">Mickael</a>
+          </span>
         </div>
       </div>
     </footer>
