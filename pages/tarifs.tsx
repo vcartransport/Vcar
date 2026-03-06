@@ -1,7 +1,5 @@
 import React from "react";
-// nodejs library that concatenates classes
 import classNames from "classnames";
-// @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -11,7 +9,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 
-// @material-ui/icons
+// Icônes
 import LocalShipping from "@material-ui/icons/LocalShipping";
 import DriveEta from "@material-ui/icons/DriveEta";
 import VerifiedUser from "@material-ui/icons/VerifiedUser";
@@ -19,7 +17,7 @@ import Info from "@material-ui/icons/Info";
 import CheckCircle from "@material-ui/icons/CheckCircle";
 import Smartphone from "@material-ui/icons/Smartphone";
 
-// core components
+// Composants UI
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import GridContainer from "../components/Grid/GridContainer";
@@ -28,8 +26,10 @@ import HeaderLinks from "../components/Header/HeaderLinks";
 import InfoArea from "../components/InfoArea/InfoArea";
 import Button from "../components/CustomButtons/Button";
 
-import styles from "../styles/jss/nextjs-material-kit/pages/landingPage";
-import productStyles from "../styles/jss/nextjs-material-kit/pages/landingPageSections/productStyle";
+// Styles et constantes
+import styles from "../styles/jss/vcar/pages/landingPage";
+import productStyles from "../styles/jss/vcar/pages/landingPageSections/productStyle";
+import { BRAND, TARIFS_VL, TARIFS_UTIL_10, TARIFS_UTIL_20 } from "../constants/config";
 
 const useStyles = makeStyles((theme) => ({
     ...styles,
@@ -112,54 +112,19 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-function createData(dist, price) {
-    return { dist, price };
-}
+// Les données de tarifs sont définies dans constants/config.ts
 
-const vlData = [
-    createData("0-50 km", "2,00 €"),
-    createData("50-100 Km", "1,80 €"),
-    createData("100-150 Km", "1,70 €"),
-    createData("150-200 km", "1,50 €"),
-    createData("200-500 Km", "1,20 €"),
-    createData("500-1000 km", "0,90 €"),
-    createData("1000-1500 km", "0,80 €"),
-    createData("Au delà 1500 km", "0,75 €"),
-];
-
-const util10Data = [
-    createData("0-50 km", "2,10 €"),
-    createData("50-100 Km", "2,00 €"),
-    createData("100-150 Km", "1,80 €"),
-    createData("150-200 km", "1,70 €"),
-    createData("200-500 Km", "1,60 €"),
-    createData("500-1000 km", "1,10 €"),
-    createData("1000-1500 km", "1,00 €"),
-    createData("Au delà 1500 km", "0,90 €"),
-];
-
-const util20Data = [
-    createData("0-50 km", "2,30 €"),
-    createData("50-100 Km", "2,20 €"),
-    createData("100-150 Km", "2,10 €"),
-    createData("150-200 km", "2,00 €"),
-    createData("200-500 Km", "1,90 €"),
-    createData("500-1000 km", "1,40 €"),
-    createData("1000-1500 km", "1,30 €"),
-    createData("Au delà 1500 km", "1,20 €"),
-];
-
-export default function TarifsPage(props) {
-    const classes = useStyles();
-    const { ...rest } = props;
+export default function TarifsPage(props: object) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const classes = (useStyles as any)();
     return (
         <div>
             <Header
                 color="white"
-                brand="Vcar Convoyage"
+                brand={BRAND.shortName}
                 rightLinks={<HeaderLinks />}
                 fixed
-                {...rest}
+                {...props}
             />
             <div className={classes.main} style={{ paddingTop: "80px" }}>
                 <div className={classes.container}>
@@ -202,7 +167,7 @@ export default function TarifsPage(props) {
                                                 <TableCell component="th" scope="row"><strong>Moins de 50 KM (Forfait)</strong></TableCell>
                                                 <TableCell align="right"><strong>100 € HT</strong></TableCell>
                                             </TableRow>
-                                            {vlData.map((row) => (
+                                            {TARIFS_VL.map((row) => (
                                                 <TableRow key={row.dist}>
                                                     <TableCell component="th" scope="row">{row.dist}</TableCell>
                                                     <TableCell align="right">{row.price}</TableCell>
@@ -226,7 +191,7 @@ export default function TarifsPage(props) {
                                             </TableRow>
                                         </TableHead>
                                         <TableBody>
-                                            {util10Data.map((row) => (
+                                            {TARIFS_UTIL_10.map((row) => (
                                                 <TableRow key={row.dist}>
                                                     <TableCell component="th" scope="row">{row.dist}</TableCell>
                                                     <TableCell align="right">{row.price}</TableCell>
@@ -250,7 +215,7 @@ export default function TarifsPage(props) {
                                             </TableRow>
                                         </TableHead>
                                         <TableBody>
-                                            {util20Data.map((row) => (
+                                            {TARIFS_UTIL_20.map((row) => (
                                                 <TableRow key={row.dist}>
                                                     <TableCell component="th" scope="row">{row.dist}</TableCell>
                                                     <TableCell align="right">{row.price}</TableCell>
@@ -272,7 +237,7 @@ export default function TarifsPage(props) {
                                         <li><strong>Assurance W garage comprise</strong>.</li>
                                         <li>État des lieux digital avec <strong>WeProov</strong></li>
                                         <li>Forfait de 100 € HT pour les livraisons de moins de 50km (Classes 1 et 2).</li>
-                    
+
                                     </ul>
                                     <div className={classes.ctaSection} style={{ marginTop: "20px", textAlign: "left", padding: "20px" }}>
                                         <p className={classes.description}>Besoin d'un devis précis ?</p>

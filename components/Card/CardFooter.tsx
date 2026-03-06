@@ -7,7 +7,7 @@ import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
 
 // core components
-import styles from "../../styles/jss/nextjs-material-kit/components/cardFooterStyle";
+import styles from "../../styles/jss/vcar/components/cardFooterStyle";
 
 const useStyles = makeStyles(styles);
 

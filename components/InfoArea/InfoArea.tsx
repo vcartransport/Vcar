@@ -5,7 +5,7 @@ import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
-import styles from "../../styles/jss/nextjs-material-kit/components/infoStyle";
+import styles from "../../styles/jss/vcar/components/infoStyle";
 
 const useStyles = makeStyles(styles);
 

@@ -9,7 +9,7 @@ import Button, { ButtonTypeMap } from "@material-ui/core/Button";
 
 // core components
 
-import buttonStyle from "../../styles/jss/nextjs-material-kit/components/buttonStyle";
+import buttonStyle from "../../styles/jss/vcar/components/buttonStyle";
 
 const makeComponentStyles = makeStyles(() => ({
   ...buttonStyle,

@@ -11,7 +11,7 @@ import GridContainer from "../Grid/GridContainer";
 import GridItem from "../Grid/GridItem";
 import Button from "../CustomButtons/Button";
 
-import styles from "../../styles/jss/nextjs-material-kit/components/footerStyle";
+import styles from "../../styles/jss/vcar/components/footerStyle";
 
 const useStyles = makeStyles(styles as any);
 

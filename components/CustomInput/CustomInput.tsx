@@ -8,7 +8,7 @@ import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import Input from "@material-ui/core/Input";
 
-import styles from "../../styles/jss/nextjs-material-kit/components/customInputStyle";
+import styles from "../../styles/jss/vcar/components/customInputStyle";
 
 const useStyles = makeStyles(styles);
 

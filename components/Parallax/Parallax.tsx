@@ -6,7 +6,7 @@ import classNames from "classnames";
 import { makeStyles } from "@material-ui/core/styles";
 
 // core components
-import styles from "../../styles/jss/nextjs-material-kit/components/parallaxStyle";
+import styles from "../../styles/jss/vcar/components/parallaxStyle";
 
 const useStyles = makeStyles(styles);
 

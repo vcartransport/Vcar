@@ -1,9 +1,8 @@
 import React from "react";
-// nodejs library that concatenates classes
 import classNames from "classnames";
-// @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-// @material-ui/icons
+
+// Icônes
 import VerifiedUser from "@material-ui/icons/VerifiedUser";
 import Security from "@material-ui/icons/Security";
 import Loyalty from "@material-ui/icons/Loyalty";
@@ -13,7 +12,7 @@ import LocalShipping from "@material-ui/icons/LocalShipping";
 import Stars from "@material-ui/icons/Stars";
 import Assignment from "@material-ui/icons/Assignment";
 
-// core components
+// Composants UI
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import GridContainer from "../components/Grid/GridContainer";
@@ -23,8 +22,10 @@ import Parallax from "../components/Parallax/Parallax";
 import InfoArea from "../components/InfoArea/InfoArea";
 import Button from "../components/CustomButtons/Button";
 
-import styles from "../styles/jss/nextjs-material-kit/pages/landingPage";
-import productStyles from "../styles/jss/nextjs-material-kit/pages/landingPageSections/productStyle";
+// Styles et constantes
+import styles from "../styles/jss/vcar/pages/landingPage";
+import productStyles from "../styles/jss/vcar/pages/landingPageSections/productStyle";
+import { BRAND } from "../constants/config";
 
 const useStyles = makeStyles((theme) => ({
     ...styles,
@@ -49,17 +50,17 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function AboutPage(props) {
-    const classes = useStyles();
-    const { ...rest } = props;
+export default function AboutPage(props: object) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const classes = (useStyles as any)();
     return (
         <div>
             <Header
                 color="white"
-                brand="Vcar Convoyage"
+                brand={BRAND.shortName}
                 rightLinks={<HeaderLinks />}
                 fixed
-                {...rest}
+                {...props}
             />
             <div className={classes.main} style={{ paddingTop: "80px" }}>
                 <div className={classes.container}>

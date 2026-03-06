@@ -7,7 +7,7 @@ import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
 
 // core components
-import styles from "../../styles/jss/nextjs-material-kit/components/cardHeaderStyle";
+import styles from "../../styles/jss/vcar/components/cardHeaderStyle";
 import { CardHeaderTypeMap } from "@material-ui/core";
 
 const useStyles = makeStyles(styles);

@@ -1,10 +1,8 @@
 import React from "react";
-// nodejs library that concatenates classes
 import classNames from "classnames";
-// @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
-// core components
+// Composants UI
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import GridContainer from "../components/Grid/GridContainer";
@@ -14,7 +12,9 @@ import Parallax from "../components/Parallax/Parallax";
 import Button from "../components/CustomButtons/Button";
 import CustomInput from "../components/CustomInput/CustomInput";
 
-import styles from "../styles/jss/nextjs-material-kit/pages/landingPage";
+// Styles et constantes
+import styles from "../styles/jss/vcar/pages/landingPage";
+import { BRAND, CONTACT } from "../constants/config";
 
 const useStyles = makeStyles((theme) => ({
     ...styles,
@@ -111,17 +111,17 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function ContactPage(props) {
-    const classes = useStyles();
-    const { ...rest } = props;
+export default function ContactPage(props: object) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const classes = (useStyles as any)();
     return (
         <div>
             <Header
                 color="white"
-                brand="Vcar Convoyage"
+                brand={BRAND.shortName}
                 rightLinks={<HeaderLinks />}
                 fixed
-                {...rest}
+                {...props}
             />
             <div className={classes.main} style={{ paddingTop: "80px" }}>
                 <div className={classes.container}>
@@ -134,7 +134,7 @@ export default function ContactPage(props) {
                                     <div className={classes.infoItem}>
                                         <i className={classNames("fas fa-map-marker-alt", classes.infoIcon)} />
                                         <div className={classes.infoText}>
-                                            <strong>24 avenue du Prado 13006 Marseille</strong>
+                                            <strong>{CONTACT.address}</strong>
                                         </div>
                                     </div>
 
@@ -142,7 +142,7 @@ export default function ContactPage(props) {
                                         <i className={classNames("fas fa-phone", classes.infoIcon)} />
                                         <div className={classes.infoText}>
                                             <strong>Téléphone</strong><br />
-                                            <a href="tel:+33765595877" style={{ color: "inherit", textDecoration: "none" }}>07 65 59 58 77</a>
+                                            <a href={CONTACT.phoneHref} style={{ color: "inherit", textDecoration: "none" }}>{CONTACT.phone}</a>
                                         </div>
                                     </div>
 
@@ -150,7 +150,7 @@ export default function ContactPage(props) {
                                         <i className={classNames("fas fa-envelope", classes.infoIcon)} />
                                         <div className={classes.infoText}>
                                             <strong>Email</strong><br />
-                                            <a href="mailto:contact@v-car.company" style={{ color: "inherit", textDecoration: "none" }}>contact@v-car.company</a>
+                                            <a href={CONTACT.emailHref} style={{ color: "inherit", textDecoration: "none" }}>{CONTACT.email}</a>
                                         </div>
                                     </div>
 
@@ -158,7 +158,7 @@ export default function ContactPage(props) {
                                         <i className={classNames("fas fa-clock", classes.infoIcon)} />
                                         <div className={classes.infoText}>
                                             <strong>Horaires</strong><br />
-                                            Lun - Sam: 08h00 - 19h00
+                                            {CONTACT.hours}
                                         </div>
                                     </div>
 
@@ -242,7 +242,7 @@ export default function ContactPage(props) {
                         <h3 className={classes.title} style={{ textAlign: "center", marginBottom: "40px" }}>Notre Zone d'Intervention</h3>
                         <div style={{ width: "100%", height: "450px", borderRadius: "10px", overflow: "hidden", boxShadow: "0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)" }}>
                             <iframe
-                                src="https://maps.google.com/maps?q=24%20avenue%20du%20Prado,%2013006%20Marseille&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                                src={CONTACT.googleMapsEmbed}
                                 width="100%"
                                 height="100%"
                                 style={{ border: 0 }}
