@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import classNames from "classnames";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -27,6 +28,13 @@ export default function HomePage(props: object) {
   const classes = useStyles();
   return (
     <div>
+      <Head>
+        <title>V-Car Transport | Convoyage de Véhicules Professionnel en France</title>
+        <meta
+          name="description"
+          content="Confiez le transport de votre véhicule à V-Car Transport. Convoyage professionnel partout en France, chauffeurs expérimentés et assurance tous risques incluse."
+        />
+      </Head>
       <Header
         color="transparent"
         routes={[]}

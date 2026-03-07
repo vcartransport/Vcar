@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import classNames from "classnames";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -116,6 +117,13 @@ export default function ContactPage(props: object) {
     const classes = (useStyles as any)();
     return (
         <div>
+            <Head>
+                <title>Contactez-nous | Devis Gratuit de Convoyage - V-Car Transport</title>
+                <meta
+                    name="description"
+                    content="Besoin d'un transport de véhicule ? Contactez V-Car Transport pour un devis gratuit. Disponible 6j/7 pour répondre à vos besoins de convoyage avec assurance."
+                />
+            </Head>
             <Header
                 color="white"
                 brand={BRAND.shortName}

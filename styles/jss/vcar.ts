@@ -1,18 +1,5 @@
-/*!
+//  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
- =========================================================
- * NextJS Material Kit - v1.2.0 based on Material Kit - v2.0.2 and Material Kit React - v1.8.0
- =========================================================
-
- * Product Page: https://www.creative-tim.com/product/vcar
- * Copyright 2021 Creative Tim (https://www.creative-tim.com)
- * Licensed under MIT (https://github.com/creativetimofficial/vcar/blob/main/LICENSE.md)
-
- =========================================================
-
- * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
- */
 
 // ##############################
 // // // Variables - Styles that are used on more than one component

@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import classNames from "classnames";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -55,6 +56,13 @@ export default function AboutPage(props: object) {
     const classes = (useStyles as any)();
     return (
         <div>
+            <Head>
+                <title>À Propos | V-Car Transport - Expert en Convoyage Automobile</title>
+                <meta
+                    name="description"
+                    content="Découvrez V-Car Transport, votre spécialiste du convoyage automobile en France. Professionnalisme, fiabilité et sécurité pour le transport de tous vos véhicules."
+                />
+            </Head>
             <Header
                 color="white"
                 brand={BRAND.shortName}

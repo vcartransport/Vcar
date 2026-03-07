@@ -48,6 +48,10 @@ export default class MyApp extends App {
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
+          <meta
+            name="description"
+            content="V-Car Transport : Votre partenaire de confiance pour le convoyage de véhicules en France. Excellence, ponctualité et sécurité pour particuliers et professionnels."
+          />
           <title>V-Car Transport | Convoyage de Véhicules Professionnel</title>
         </Head>
         <Component {...pageProps} />

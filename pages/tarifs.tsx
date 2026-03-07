@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import classNames from "classnames";
 import { makeStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
@@ -119,6 +120,13 @@ export default function TarifsPage(props: object) {
     const classes = (useStyles as any)();
     return (
         <div>
+            <Head>
+                <title>Nos Tarifs de Convoyage | V-Car Transport - Prix Kilométriques</title>
+                <meta
+                    name="description"
+                    content="Découvrez nos tarifs de convoyage kilométriques HT. Péages et assurance W garage inclus. Prix compétitifs pour véhicules légers et utilitaires."
+                />
+            </Head>
             <Header
                 color="white"
                 brand={BRAND.shortName}
