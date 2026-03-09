@@ -3,6 +3,6 @@ const cardBodyStyle = {
     padding: "0.9375rem 1.875rem",
     flex: "1 1 auto",
   },
-};
+} as const;
 
 export default cardBodyStyle;

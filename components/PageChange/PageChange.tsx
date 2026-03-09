@@ -17,8 +17,8 @@ const useStyles = makeStyles({
     margin: "100px auto",
     padding: "0px",
     maxWidth: "360px",
-    textAlign: "center",
-    position: "relative",
+    textAlign: "center" as "center",
+    position: "relative" as "relative",
     zIndex: 9999,
     top: "0"
   },
@@ -29,7 +29,7 @@ const useStyles = makeStyles({
     ...title,
     color: "#FFFFFF"
   }
-});
+} as any);
 
 export default function PageChange(props) {
   const classes = useStyles();

@@ -42,6 +42,6 @@ const teamStyle = {
   margin5: {
     margin: "5px"
   }
-};
+} as const;
 
 export default teamStyle;

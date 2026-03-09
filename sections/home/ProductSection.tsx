@@ -13,7 +13,7 @@ import InfoArea from "../../components/InfoArea/InfoArea";
 
 import styles from "../../styles/jss/vcar/pages/landingPageSections/productStyle";
 
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles(styles as any);
 
 export default function ProductSection() {
   const classes = useStyles();

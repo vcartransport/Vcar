@@ -9,7 +9,7 @@ import { makeStyles } from "@material-ui/core/styles";
 // core components
 import styles from "../../styles/jss/vcar/components/cardStyle";
 
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles(styles as any);
 
 export default function Card(props: CardProps) {
   const classes = useStyles();
@@ -18,10 +18,7 @@ export default function Card(props: CardProps) {
     [classes.card]: true,
     [classes.cardPlain]: plain,
     [classes.cardCarousel]: carousel,
-  });
-  if(className !== undefined) {
-    cardClasses.concat(" " + className)
-  }
+  }, className);
   return (
     <div className={cardClasses} {...rest}>
       {children}

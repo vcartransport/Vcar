@@ -63,6 +63,6 @@ const infoStyle = {
     width: "61px",
     height: "61px"
   }
-};
+} as const;
 
 export default infoStyle;

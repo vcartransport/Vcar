@@ -3,7 +3,8 @@ import {
   successCardHeader,
   dangerCardHeader,
   infoCardHeader,
-  primaryCardHeader
+  primaryCardHeader,
+  roseCardHeader,
 } from "../../vcar";
 
 const cardHeaderStyle = {
@@ -14,17 +15,18 @@ const cardHeaderStyle = {
     marginRight: "15px",
     marginTop: "-30px",
     border: "0",
-    marginBottom: "0"
+    marginBottom: "0",
   },
   cardHeaderPlain: {
     marginLeft: "0px",
-    marginRight: "0px"
+    marginRight: "0px",
   },
   warningCardHeader,
   successCardHeader,
   dangerCardHeader,
   infoCardHeader,
-  primaryCardHeader
-};
+  primaryCardHeader,
+  roseCardHeader,
+} as const;
 
 export default cardHeaderStyle;

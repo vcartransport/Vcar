@@ -23,6 +23,6 @@ const workStyle = {
     marginRight: "15px",
     marginLeft: "15px"
   }
-};
+} as const;
 
 export default workStyle;

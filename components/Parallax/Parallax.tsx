@@ -8,9 +8,9 @@ import { makeStyles } from "@material-ui/core/styles";
 // core components
 import styles from "../../styles/jss/vcar/components/parallaxStyle";
 
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles(styles as any);
 
-export default function Parallax(props) {
+export default function Parallax(props: ParallaxProps) {
   let windowScrollTop;
   // if (window.innerWidth >= 768) {
   //   windowScrollTop = window.pageYOffset / 3;
@@ -40,8 +40,7 @@ export default function Parallax(props) {
     [classes.filter]: filter,
     [classes.small]: small,
     [classes.parallaxResponsive]: responsive,
-    [className]: className !== undefined
-  });
+  }, className);
   return (
     <div
       className={parallaxClasses}
@@ -57,12 +56,12 @@ export default function Parallax(props) {
 }
 
 export interface ParallaxProps {
-  className: string,
-  filter: boolean,
-  children: Element|Element[],
-  style: string,
-  image: string,
-  small: boolean,
+  className?: string;
+  filter?: boolean;
+  children?: React.ReactNode;
+  style?: React.CSSProperties;
+  image?: string;
+  small?: boolean;
   // this will add a min-height of 660px on small screens
-  responsive: boolean
+  responsive?: boolean;
 };

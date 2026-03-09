@@ -10,7 +10,7 @@ import Input from "@material-ui/core/Input";
 
 import styles from "../../styles/jss/vcar/components/customInputStyle";
 
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles(styles as any);
 
 export default function CustomInput(props: CustomInputProps) {
   const classes = useStyles();
@@ -27,8 +27,8 @@ export default function CustomInput(props: CustomInputProps) {
   } = props;
 
   const labelClasses = classNames({
-    [" " + classes.labelRootError]: error,
-    [" " + classes.labelRootSuccess]: success && !error
+    [classes.labelRootError]: error,
+    [classes.labelRootSuccess]: success && !error
   });
   const underlineClasses = classNames({
     [classes.underlineError]: error,
@@ -36,9 +36,7 @@ export default function CustomInput(props: CustomInputProps) {
     [classes.underline]: true,
     [classes.whiteUnderline]: white
   });
-  const marginTop = classNames({
-    [inputRootCustomClasses]: inputRootCustomClasses !== undefined
-  });
+  const marginTop = classNames(inputRootCustomClasses);
   const inputClasses = classNames({
     [classes.input]: true,
     [classes.whiteInput]: white

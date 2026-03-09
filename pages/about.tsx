@@ -1,5 +1,4 @@
 import React from "react";
-import Head from "next/head";
 import classNames from "classnames";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -22,13 +21,14 @@ import HeaderLinks from "../components/Header/HeaderLinks";
 import Parallax from "../components/Parallax/Parallax";
 import InfoArea from "../components/InfoArea/InfoArea";
 import Button from "../components/CustomButtons/Button";
+import SEO from "../components/SEO/SEO";
 
 // Styles et constantes
 import styles from "../styles/jss/vcar/pages/landingPage";
 import productStyles from "../styles/jss/vcar/pages/landingPageSections/productStyle";
 import { BRAND } from "../constants/config";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(((theme) => ({
     ...styles,
     ...productStyles,
     title: {
@@ -49,20 +49,18 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: "6px",
         marginTop: "40px"
     }
-}));
+})) as any);
 
 export default function AboutPage(props: object) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const classes = (useStyles as any)();
     return (
         <div>
-            <Head>
-                <title>À Propos | V-Car Transport - Expert en Convoyage Automobile</title>
-                <meta
-                    name="description"
-                    content="Découvrez V-Car Transport, votre spécialiste du convoyage automobile en France. Professionnalisme, fiabilité et sécurité pour le transport de tous vos véhicules."
-                />
-            </Head>
+            <SEO 
+                title="À Propos | Expert en Convoyage Automobile" 
+                description="Découvrez V-Car Transport, votre spécialiste du convoyage automobile en France. Professionnalisme, fiabilité et sécurité pour le transport de tous vos véhicules."
+                canonical="/about"
+            />
             <Header
                 color="white"
                 brand={BRAND.shortName}
@@ -228,4 +226,3 @@ export default function AboutPage(props: object) {
         </div>
     );
 }
-

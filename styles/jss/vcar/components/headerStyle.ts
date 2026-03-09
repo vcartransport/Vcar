@@ -30,7 +30,7 @@ const headerStyle = {
     flexFlow: "row nowrap",
     justifyContent: "flex-start",
     position: "relative",
-    zIndex: "unset"
+    zIndex: "unset" as any
   },
   absolute: {
     position: "absolute",
@@ -160,6 +160,6 @@ const headerStyle = {
     paddingLeft: "0",
     ...transition
   }
-};
+} as const;
 
 export default headerStyle;

@@ -12,12 +12,14 @@ import IconButton from "@material-ui/core/IconButton";
 import Button from "@material-ui/core/Button";
 import Hidden from "@material-ui/core/Hidden";
 import Drawer from "@material-ui/core/Drawer";
+
+const HiddenAny = Hidden as any;
 // @material-ui/icons
 import Menu from "@material-ui/icons/Menu";
 // core components
 import styles from "../../styles/jss/vcar/components/headerStyle";
 
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles(styles as any);
 
 export default function Header(props: HeaderProps) {
   const classes = useStyles();
@@ -83,17 +85,17 @@ export default function Header(props: HeaderProps) {
         {leftLinks !== undefined ? brandComponent : null}
         <div className={classes.flex}>
           {leftLinks !== undefined ? (
-            <Hidden smDown implementation="css">
+            <HiddenAny smDown implementation="css">
               {leftLinks}
-            </Hidden>
+            </HiddenAny>
           ) : (
             brandComponent
           )}
         </div>
-        <Hidden smDown implementation="css">
+        <HiddenAny smDown implementation="css">
           {rightLinks}
-        </Hidden>
-        <Hidden mdUp>
+        </HiddenAny>
+        <HiddenAny mdUp>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -101,9 +103,9 @@ export default function Header(props: HeaderProps) {
           >
             <Menu />
           </IconButton>
-        </Hidden>
+        </HiddenAny>
       </Toolbar>
-      <Hidden mdUp implementation="js">
+      <HiddenAny mdUp implementation="js">
         <Drawer
           variant="temporary"
           anchor={"right"}
@@ -118,7 +120,7 @@ export default function Header(props: HeaderProps) {
             {rightLinks}
           </div>
         </Drawer>
-      </Hidden>
+      </HiddenAny>
     </AppBar>
   );
 }
@@ -137,6 +139,7 @@ export interface HeaderProps {
   rightLinks?: ReactElement;
   leftLinks?: ReactElement;
   brand: string;
+  routes?: any[];
   fixed?: boolean;
   absolute?: boolean;
   changeColorOnScroll?: {

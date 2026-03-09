@@ -1,0 +1,65 @@
+﻿info  - Linting and checking validity of types...
+info  - Creating an optimized production build...
+node.exe : Browserslist: 
+caniuse-lite is outdated. 
+Please run:
+Au caractère Ligne:1 : 1
++ & "C:\Program 
+Files\nodejs/node.exe" "C:\Us
+ers\micka\AppData\Roaming\ 
+...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
+    + CategoryInfo           
+   : NotSpecified: (Browser  
+  slist: c...ed. Please ru   
+ n::String) [], RemoteExc    
+eption
+    + FullyQualifiedErrorId  
+   : NativeCommandError
+ 
+  npx browserslist@latest 
+--update-db
+  Why you should do it 
+regularly: https://github.com
+/browserslist/browserslist#br
+owsers-data-updating
+Browserslist: caniuse-lite 
+is outdated. Please run:
+  npx browserslist@latest 
+--update-db
+  Why you should do it 
+regularly: https://github.com
+/browserslist/browserslist#br
+owsers-data-updating
+info  - Compiled successfully
+info  - Collecting page data...
+Warning: You have opted-out 
+of Automatic Static 
+Optimization due to 
+`getInitialProps` in 
+`pages/_app`. This does not 
+opt-out pages with 
+`getStaticProps`
+Read more: https://nextjs.org
+/docs/messages/opt-out-auto-s
+tatic-optimization
+
+Route (pages)                              Size     First Load JS
+Ôöî ╬╗ /                                      7.01 kB         156 kB
+Ôö£   /_app                                  0 B            97.7 kB
+Ôö£ ╬╗ /404                                   401 B          98.1 kB
+Ôö£ ╬╗ /about                                 3.56 kB         147 kB
+Ôö£ ╬╗ /api/post                              0 B            97.7 kB
+Ôö£ ╬╗ /contact                               2.75 kB         152 kB
+Ôöö ╬╗ /tarifs                                4.75 kB         148 kB
++ First Load JS shared by all              101 kB
+  Ôö£ chunks/framework-e70c6273bfe3f237.js   42.1 kB
+  Ôö£ chunks/main-c24f43e0082648e3.js        31.2 kB
+  Ôö£ chunks/pages/_app-7ab4a72b2d70f980.js  23.6 kB
+  Ôö£ chunks/webpack-9b312e20a4e32339.js     840 B
+  Ôöö css/04653def14679a35.css               3.77 kB
+
+╬╗  (Server)  server-side renders at runtime (uses getInitialProps or getServerSideProps)
+

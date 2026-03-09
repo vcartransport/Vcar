@@ -11,9 +11,7 @@ import Button, { ButtonTypeMap } from "@material-ui/core/Button";
 
 import buttonStyle from "../../styles/jss/vcar/components/buttonStyle";
 
-const makeComponentStyles = makeStyles(() => ({
-  ...buttonStyle,
-}));
+const makeComponentStyles = makeStyles(buttonStyle as any);
 
 const RegularButton = React.forwardRef((props: RegularButtonProp, ref: any) => {
   const {
@@ -35,8 +33,6 @@ const RegularButton = React.forwardRef((props: RegularButtonProp, ref: any) => {
 
   const btnClasses = classNames({
     [classes.button]: true,
-    [classes[size]]: size,
-    [classes[color]]: color,
     [classes.round]: round,
     [classes.fullWidth]: fullWidth,
     [classes.disabled]: disabled,
@@ -44,8 +40,10 @@ const RegularButton = React.forwardRef((props: RegularButtonProp, ref: any) => {
     [classes.block]: block,
     [classes.link]: link,
     [classes.justIcon]: justIcon,
-    [className]: className,
-  });
+  }, 
+  size && classes[size],
+  color && classes[color],
+  className);
   return (
     <Button {...rest} ref={ref} classes={{ root: btnClasses }}>
       {children}

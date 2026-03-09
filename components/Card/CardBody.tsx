@@ -9,15 +9,14 @@ import { makeStyles } from "@material-ui/core/styles";
 // core components
 import styles from "../../styles/jss/vcar/components/cardBodyStyle";
 
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles(styles as any);
 
 export default function CardBody(props: CardBodyProps) {
   const classes = useStyles();
   const { className, children, ...rest } = props;
   const cardBodyClasses = classNames({
     [classes.cardBody]: true,
-    [className]: className !== undefined
-  });
+  }, className);
   return (
     <div className={cardBodyClasses} {...rest}>
       {children}

@@ -7,7 +7,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import styles from "../../styles/jss/vcar/components/infoStyle";
 
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles(styles as any);
 
 export default function InfoArea(props: InfoAreaProps) {
   const classes = useStyles();

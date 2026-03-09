@@ -1,129 +1,96 @@
 import React from "react";
-import Head from "next/head";
+// nodejs library that concatenates classes
 import classNames from "classnames";
+// @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
-// Composants UI
+// @material-ui/icons
+import Phone from "@material-ui/icons/Phone";
+import Email from "@material-ui/icons/Email";
+import LocationOn from "@material-ui/icons/LocationOn";
+import Schedule from "@material-ui/icons/Schedule";
+
+// core components
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import GridContainer from "../components/Grid/GridContainer";
 import GridItem from "../components/Grid/GridItem";
-import HeaderLinks from "../components/Header/HeaderLinks";
-import Parallax from "../components/Parallax/Parallax";
 import Button from "../components/CustomButtons/Button";
+import HeaderLinks from "../components/Header/HeaderLinks";
 import CustomInput from "../components/CustomInput/CustomInput";
+import SEO from "../components/SEO/SEO";
 
-// Styles et constantes
 import styles from "../styles/jss/vcar/pages/landingPage";
 import { BRAND, CONTACT } from "../constants/config";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(((theme) => ({
     ...styles,
-    section: {
-        padding: "70px 0",
-        textAlign: "center" as "center"
-    },
     title: {
         ...styles.title,
-        marginBottom: "1rem",
-        marginTop: "30px",
-        minHeight: "32px",
-        textDecoration: "none",
-        color: "#3C4858",
-        display: "inline-block",
-        position: "relative" as "relative"
+        color: "#3C4858"
     },
-    description: {
-        color: "#999"
-    },
-    contactSection: {
+    section: {
         padding: "70px 0",
+        textAlign: "center"
     },
-    infoSection: {
+    contactInfo: {
         padding: "40px",
-        backgroundColor: "#2E3440", // Deep Navy/Slate
+        height: "100%",
+        backgroundColor: "#2E3440",
+        borderRadius: "6px",
         color: "#FFFFFF",
-        borderRadius: "10px",
-        boxShadow: "0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)",
-        textAlign: "left" as "left",
-        height: "100%"
-    },
-    infoTitle: {
-        ...styles.title,
-        color: "#FFFFFF",
-        marginTop: "0",
-        fontSize: "1.5rem",
-        marginBottom: "20px",
-        position: "relative" as "relative"
+        textAlign: "left"
     },
     infoItem: {
         display: "flex",
-        alignItems: "flex-start",
-        marginBottom: "25px",
+        alignItems: "center",
+        marginBottom: "25px"
     },
     infoIcon: {
         marginRight: "20px",
-        fontSize: "20px",
-        color: "#f44336", // Brand Red
-        minWidth: "24px",
-        textAlign: "center" as "center"
+        fontSize: "30px",
+        color: "#f44336"
     },
     infoText: {
-        fontSize: "1rem",
-        lineHeight: "1.5em",
-        margin: "0"
-    },
-    socialIcons: {
-        marginTop: "40px",
-        borderTop: "1px solid rgba(255, 255, 255, 0.1)",
-        paddingTop: "20px"
-    },
-    socialButton: {
-        marginRight: "10px",
-        "& i": {
-            fontSize: "20px"
+        "& h4": {
+            margin: "0 0 5px 0",
+            fontWeight: "bold",
+            fontSize: "1.1rem"
+        },
+        "& p": {
+            margin: 0,
+            opacity: 0.8
+        },
+        "& a": {
+            color: "inherit",
+            textDecoration: "none"
         }
     },
-    formSection: {
-        padding: "40px 20px",
-        textAlign: "left" as "left"
+    formContainer: {
+        padding: "40px",
+        backgroundColor: "#FFFFFF",
+        borderRadius: "6px",
+        boxShadow: "0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)"
     },
-    formTitle: {
-        ...styles.title,
-        color: "#3C4858",
-        marginTop: "0",
-        fontSize: "1.5rem",
-        marginBottom: "10px",
-        position: "relative" as "relative"
-    },
-    formSub: {
-        color: "#999",
-        marginBottom: "40px"
-    },
-    main: {
-        background: "#FFFFFF",
-        position: "relative" as "relative",
-        zIndex: 3
-    },
-    container: {
-        ...styles.container,
-        zIndex: 12,
-        position: "relative" as "relative"
+    mapContainer: {
+        width: "100%",
+        height: "400px",
+        borderRadius: "6px",
+        overflow: "hidden",
+        marginTop: "50px",
+        boxShadow: "0 2px 20px rgba(0,0,0,0.1)"
     }
-}));
+})) as any);
 
 export default function ContactPage(props: object) {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const classes = (useStyles as any)();
     return (
         <div>
-            <Head>
-                <title>Contactez-nous | Devis Gratuit de Convoyage - V-Car Transport</title>
-                <meta
-                    name="description"
-                    content="Besoin d'un transport de véhicule ? Contactez V-Car Transport pour un devis gratuit. Disponible 6j/7 pour répondre à vos besoins de convoyage avec assurance."
-                />
-            </Head>
+            <SEO 
+                title="Contact | V-Car Transport - Demandez un Devis" 
+                description="Besoin d'un convoyage de véhicule ? Contactez V-Car Transport pour un devis gratuit. Disponible à Marseille et partout en France ! Excellence et réactivité."
+                canonical="/contact"
+            />
             <Header
                 color="white"
                 brand={BRAND.shortName}
@@ -133,122 +100,119 @@ export default function ContactPage(props: object) {
             />
             <div className={classes.main} style={{ paddingTop: "80px" }}>
                 <div className={classes.container}>
-                    <div className={classes.contactSection}>
-                        <GridContainer>
-                            <GridItem xs={12} sm={12} md={5}>
-                                <div className={classes.infoSection}>
-                                    <h2 className={classes.infoTitle}>Informations de Contact</h2>
-
-                                    <div className={classes.infoItem}>
-                                        <i className={classNames("fas fa-map-marker-alt", classes.infoIcon)} />
-                                        <div className={classes.infoText}>
-                                            <strong>{CONTACT.address}</strong>
-                                        </div>
-                                    </div>
-
-                                    <div className={classes.infoItem}>
-                                        <i className={classNames("fas fa-phone", classes.infoIcon)} />
-                                        <div className={classes.infoText}>
-                                            <strong>Téléphone</strong><br />
-                                            <a href={CONTACT.phoneHref} style={{ color: "inherit", textDecoration: "none" }}>{CONTACT.phone}</a>
-                                        </div>
-                                    </div>
-
-                                    <div className={classes.infoItem}>
-                                        <i className={classNames("fas fa-envelope", classes.infoIcon)} />
-                                        <div className={classes.infoText}>
-                                            <strong>Email</strong><br />
-                                            <a href={CONTACT.emailHref} style={{ color: "inherit", textDecoration: "none" }}>{CONTACT.email}</a>
-                                        </div>
-                                    </div>
-
-                                    <div className={classes.infoItem}>
-                                        <i className={classNames("fas fa-clock", classes.infoIcon)} />
-                                        <div className={classes.infoText}>
-                                            <strong>Horaires</strong><br />
-                                            {CONTACT.hours}
-                                        </div>
-                                    </div>
-
-                                    <div className={classes.socialIcons}>
-                                        <Button justIcon round color="transparent" simple className={classes.socialButton}>
-                                            <i className="fab fa-facebook-f" style={{ color: "white" }} />
-                                        </Button>
-                                        <Button justIcon round color="transparent" simple className={classes.socialButton}>
-                                            <i className="fab fa-instagram" style={{ color: "white" }} />
-                                        </Button>
-                                        <Button justIcon round color="transparent" simple className={classes.socialButton}>
-                                            <i className="fab fa-linkedin-in" style={{ color: "white" }} />
-                                        </Button>
-                                    </div>
-                                </div>
-                            </GridItem>
-
-                            <GridItem xs={12} sm={12} md={7}>
-                                <div className={classes.formSection}>
-                                    <h2 className={classes.formTitle}>Demander un Devis Gratuit</h2>
-                                    <p className={classes.formSub}>
-                                        Remplissez le formulaire ci-dessous et nos experts vous répondront sous 24h.
-                                    </p>
-                                    <form>
-                                        <GridContainer>
-                                            <GridItem xs={12} sm={6}>
-                                                <CustomInput
-                                                    labelText="Nom Complet"
-                                                    id="name"
-                                                    formControlProps={{
-                                                        fullWidth: true
-                                                    }}
-                                                />
-                                            </GridItem>
-                                            <GridItem xs={12} sm={6}>
-                                                <CustomInput
-                                                    labelText="Email"
-                                                    id="email"
-                                                    formControlProps={{
-                                                        fullWidth: true
-                                                    }}
-                                                />
-                                            </GridItem>
-                                            <GridItem xs={12}>
-                                                <CustomInput
-                                                    labelText="Type de transport (Trajet court, Longue distance...)"
-                                                    id="subject"
-                                                    formControlProps={{
-                                                        fullWidth: true
-                                                    }}
-                                                />
-                                            </GridItem>
-                                            <GridItem xs={12}>
-                                                <CustomInput
-                                                    labelText="Détails de votre demande (Véhicule, départ, arrivée...)"
-                                                    id="message"
-                                                    formControlProps={{
-                                                        fullWidth: true
-                                                    }}
-                                                    inputProps={{
-                                                        multiline: true,
-                                                        rows: 4
-                                                    }}
-                                                />
-                                            </GridItem>
-                                            <GridItem xs={12}>
-                                                <div style={{ marginTop: "20px" }}>
-                                                    <Button color="danger" size="lg">
-                                                        Envoyer la Demande
-                                                    </Button>
-                                                </div>
-                                            </GridItem>
-                                        </GridContainer>
-                                    </form>
-                                </div>
+                    <div className={classes.section}>
+                        <GridContainer justify="center">
+                            <GridItem xs={12} sm={12} md={8}>
+                                <h1 className={classes.title}>Contactez-nous</h1>
+                                <h4 className={classes.description}>
+                                    Une question ? Un projet de convoyage ? Notre équipe est à votre écoute
+                                    pour vous proposer la meilleure solution de transport partout en France.
+                                </h4>
                             </GridItem>
                         </GridContainer>
-                    </div>
 
-                    <div style={{ marginTop: "40px", marginBottom: "60px" }}>
-                        <h3 className={classes.title} style={{ textAlign: "center", marginBottom: "40px" }}>Notre Zone d'Intervention</h3>
-                        <div style={{ width: "100%", height: "450px", borderRadius: "10px", overflow: "hidden", boxShadow: "0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)" }}>
+                        <div style={{ marginTop: "50px" }}>
+                            <GridContainer>
+                                {/* Contact Info */}
+                                <GridItem xs={12} sm={12} md={5}>
+                                    <div className={classes.contactInfo}>
+                                        <h3 style={{ color: "white", marginBottom: "40px" }}>Nos Coordonnées</h3>
+
+                                        <div className={classes.infoItem}>
+                                            <Phone className={classes.infoIcon} />
+                                            <div className={classes.infoText}>
+                                                <h4>Téléphone</h4>
+                                                <p><a href={CONTACT.phoneHref}>{CONTACT.phone}</a></p>
+                                            </div>
+                                        </div>
+
+                                        <div className={classes.infoItem}>
+                                            <Email className={classes.infoIcon} />
+                                            <div className={classes.infoText}>
+                                                <h4>Email</h4>
+                                                <p><a href={CONTACT.emailHref}>{CONTACT.email}</a></p>
+                                            </div>
+                                        </div>
+
+                                        <div className={classes.infoItem}>
+                                            <LocationOn className={classes.infoIcon} />
+                                            <div className={classes.infoText}>
+                                                <h4>Adresse</h4>
+                                                <p>{CONTACT.address}</p>
+                                            </div>
+                                        </div>
+
+                                        <div className={classes.infoItem}>
+                                            <Schedule className={classes.infoIcon} />
+                                            <div className={classes.infoText}>
+                                                <h4>Horaires</h4>
+                                                <p>{CONTACT.hours}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </GridItem>
+
+                                {/* Contact Form */}
+                                <GridItem xs={12} sm={12} md={7}>
+                                    <div className={classes.formContainer}>
+                                        <h3 style={{ marginBottom: "30px", textAlign: "left" }}>Envoyez-nous un message</h3>
+                                        <form>
+                                            <GridContainer>
+                                                <GridItem xs={12} sm={12} md={6}>
+                                                    <CustomInput
+                                                        labelText="Nom Complet"
+                                                        id="name"
+                                                        formControlProps={{
+                                                            fullWidth: true
+                                                        }}
+                                                    />
+                                                </GridItem>
+                                                <GridItem xs={12} sm={12} md={6}>
+                                                    <CustomInput
+                                                        labelText="Votre Email"
+                                                        id="email"
+                                                        formControlProps={{
+                                                            fullWidth: true
+                                                        }}
+                                                    />
+                                                </GridItem>
+                                                <GridItem xs={12} sm={12} md={12}>
+                                                    <CustomInput
+                                                        labelText="Sujet"
+                                                        id="subject"
+                                                        formControlProps={{
+                                                            fullWidth: true
+                                                        }}
+                                                    />
+                                                </GridItem>
+                                                <GridItem xs={12} sm={12} md={12}>
+                                                    <CustomInput
+                                                        labelText="Votre Message"
+                                                        id="message"
+                                                        formControlProps={{
+                                                            fullWidth: true,
+                                                            className: classes.textArea
+                                                        }}
+                                                        inputProps={{
+                                                            multiline: true,
+                                                            rows: 5
+                                                        }}
+                                                    />
+                                                </GridItem>
+                                                <GridItem xs={12} sm={12} md={12} style={{ textAlign: "right", marginTop: "20px" }}>
+                                                    <Button color="danger" size="lg">
+                                                        Envoyer le message
+                                                    </Button>
+                                                </GridItem>
+                                            </GridContainer>
+                                        </form>
+                                    </div>
+                                </GridItem>
+                            </GridContainer>
+                        </div>
+
+                        {/* Google Maps Embed */}
+                        <div className={classes.mapContainer}>
                             <iframe
                                 src={CONTACT.googleMapsEmbed}
                                 width="100%"
@@ -256,6 +220,7 @@ export default function ContactPage(props: object) {
                                 style={{ border: 0 }}
                                 allowFullScreen={true}
                                 loading="lazy"
+                                title="V-Car Transport Location"
                             ></iframe>
                         </div>
                     </div>
@@ -265,4 +230,3 @@ export default function ContactPage(props: object) {
         </div>
     );
 }
-

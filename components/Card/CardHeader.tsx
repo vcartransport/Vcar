@@ -10,7 +10,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import styles from "../../styles/jss/vcar/components/cardHeaderStyle";
 import { CardHeaderTypeMap } from "@material-ui/core";
 
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles(styles as any);
 
 export default function CardHeader(props: CardHeaderProps) {
   const classes = useStyles();
@@ -19,9 +19,7 @@ export default function CardHeader(props: CardHeaderProps) {
     [classes.cardHeader]: true,
     [classes[color + "CardHeader"]]: color,
     [classes.cardHeaderPlain]: plain,
-  });
-  if(className !== undefined)
-    cardHeaderClasses.concat(" " + className);
+  }, className);
   return (
     <div className={cardHeaderClasses} {...rest}>
       {children}

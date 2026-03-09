@@ -94,7 +94,7 @@ export default function Footer(props: FooterProps) {
 
         <div className={classes.bottomBar} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap" }}>
           <span>
-            &copy; {1900 + new Date().getYear()} V-car Convoyage. Tous droits réservés.
+            &copy; {new Date().getFullYear()} V-car Convoyage. Tous droits réservés.
           </span>
           <span style={{ fontSize: "0.8em" }}>
             Développé par <a href="https://mickaelcode.com" target="_blank" rel="noopener noreferrer">Mickael</a>

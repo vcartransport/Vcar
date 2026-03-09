@@ -11,7 +11,7 @@ const styles = {
     marginLeft: "-15px",
     width: "auto",
   },
-};
+} as const;
 
 export interface GridContainerProps {
   children: React.ReactNode;
@@ -22,7 +22,7 @@ export interface GridContainerProps {
   [key: string]: any;
 };
 
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles(styles as any);
 
 export default function GridContainer(props: GridContainerProps) {
   const classes = useStyles();

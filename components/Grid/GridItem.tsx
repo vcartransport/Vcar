@@ -13,9 +13,9 @@ const styles = {
     paddingLeft: "15px",
     flexBasis: "auto",
   },
-};
+} as const;
 
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles(styles as any);
 
 export interface GridItemProps {
   children: React.ReactNode;

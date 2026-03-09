@@ -380,6 +380,6 @@ const buttonStyle = {
       }
     }
   }
-};
+} as const;
 
 export default buttonStyle;

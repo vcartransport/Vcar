@@ -2,7 +2,7 @@ const vcarServicesStyle = {
     section: {
         padding: "80px 0",
         background: "linear-gradient(135deg, #0f1b33 0%, #1a2744 40%, #243555 100%)",
-        position: "relative" as const,
+        position: "relative" as "relative",
         overflow: "hidden",
         "&::before": {
             content: '""',
@@ -27,7 +27,7 @@ const vcarServicesStyle = {
         "@media (min-width: 1200px)": { maxWidth: "1140px" },
     },
     headerArea: {
-        textAlign: "center" as const,
+        textAlign: "center" as "center",
         marginBottom: "60px",
     },
     logoContainer: {
@@ -40,7 +40,7 @@ const vcarServicesStyle = {
     logoImg: {
         width: "50px",
         height: "50px",
-        objectFit: "contain" as const,
+        objectFit: "contain" as "contain",
     },
     brandName: {
         fontFamily: '"Roboto Slab", "Times New Roman", serif',
@@ -48,7 +48,7 @@ const vcarServicesStyle = {
         fontWeight: 700,
         color: "#ffffff",
         letterSpacing: "3px",
-        textTransform: "uppercase" as const,
+        textTransform: "uppercase" as "uppercase",
         margin: 0,
     },
     subtitle: {
@@ -57,7 +57,7 @@ const vcarServicesStyle = {
         fontWeight: 400,
         color: "rgba(255,255,255,0.5)",
         letterSpacing: "8px",
-        textTransform: "uppercase" as const,
+        textTransform: "uppercase" as "uppercase",
         marginTop: "5px",
     },
     divider: {
@@ -71,9 +71,9 @@ const vcarServicesStyle = {
         display: "flex",
         justifyContent: "center",
         gap: "30px",
-        flexWrap: "wrap" as const,
+        flexWrap: "wrap" as "wrap",
         "@media (max-width: 768px)": {
-            flexDirection: "column" as const,
+            flexDirection: "column" as "column",
             alignItems: "center",
         },
     },
@@ -84,9 +84,9 @@ const vcarServicesStyle = {
         borderRadius: "16px",
         padding: "40px 30px",
         width: "280px",
-        textAlign: "center" as const,
+        textAlign: "center" as "center",
         transition: "all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-        position: "relative" as const,
+        position: "relative" as "relative",
         overflow: "hidden",
         "&:hover": {
             transform: "translateY(-8px)",
@@ -143,7 +143,7 @@ const vcarServicesStyle = {
     },
     contactArea: {
         marginTop: "60px",
-        textAlign: "center" as const,
+        textAlign: "center" as "center",
     },
     contactButton: {
         display: "inline-block",
@@ -154,7 +154,7 @@ const vcarServicesStyle = {
         fontSize: "0.9rem",
         fontWeight: 600,
         letterSpacing: "2px",
-        textTransform: "uppercase" as const,
+        textTransform: "uppercase" as "uppercase",
         textDecoration: "none",
         borderRadius: "50px",
         border: "none",
@@ -172,7 +172,7 @@ const vcarServicesStyle = {
         justifyContent: "center",
         gap: "40px",
         marginTop: "25px",
-        flexWrap: "wrap" as const,
+        flexWrap: "wrap" as "wrap",
     },
     contactItem: {
         display: "flex",
@@ -187,6 +187,6 @@ const vcarServicesStyle = {
             color: "#c8956c",
         },
     },
-};
+} as const;
 
 export default vcarServicesStyle;

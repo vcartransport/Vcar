@@ -1,4 +1,16 @@
+# V-Car Transport - Robots.txt
+# Optimisé pour le référencement français (Google, Bing, Qwant)
+
 User-agent: *
 Allow: /
 
+# Autoriser l'exploration des fichiers statiques
+Allow: /static/
+Allow: /_next/static/
+
+# Sitemap pour Google Search Console
 Sitemap: https://v-car.company/sitemap.xml
+
+# Bloquer les pages d'erreur ou d'administration si nécessaire
+Disallow: /404
+Disallow: /500

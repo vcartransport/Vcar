@@ -9,15 +9,14 @@ import { makeStyles } from "@material-ui/core/styles";
 // core components
 import styles from "../../styles/jss/vcar/components/cardFooterStyle";
 
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles(styles as any);
 
 export default function CardFooter(props: CardFooterProps) {
   const classes = useStyles();
   const { className, children, ...rest } = props;
   const cardFooterClasses = classNames({
     [classes.cardFooter]: true,
-    [className]: className !== undefined
-  });
+  }, className);
   return (
     <div className={cardFooterClasses} {...rest}>
       {children}

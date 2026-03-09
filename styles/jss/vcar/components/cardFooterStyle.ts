@@ -5,6 +5,6 @@ const cardFooterStyle = {
     backgroundColor: "transparent",
     padding: "0.9375rem 1.875rem",
   },
-};
+} as const;
 
 export default cardFooterStyle;

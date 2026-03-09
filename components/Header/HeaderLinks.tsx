@@ -15,14 +15,13 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import IconButton from "@material-ui/core/IconButton";
 
 // core components
-import CustomDropdown from "../CustomDropdown/CustomDropdown";
 import Button from "../CustomButtons/Button";
 
 import styles from "../../styles/jss/vcar/components/headerLinksStyle";
 
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles(styles as any);
 
-export default function HeaderLinks(props) {
+export default function HeaderLinks(props: any) {
   const classes = useStyles();
   return (
     <List className={classes.list}>

@@ -1,5 +1,4 @@
 import React from "react";
-import Head from "next/head";
 import classNames from "classnames";
 import { makeStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
@@ -26,13 +25,14 @@ import GridItem from "../components/Grid/GridItem";
 import HeaderLinks from "../components/Header/HeaderLinks";
 import InfoArea from "../components/InfoArea/InfoArea";
 import Button from "../components/CustomButtons/Button";
+import SEO from "../components/SEO/SEO";
 
 // Styles et constantes
 import styles from "../styles/jss/vcar/pages/landingPage";
 import productStyles from "../styles/jss/vcar/pages/landingPageSections/productStyle";
 import { BRAND, TARIFS_VL, TARIFS_UTIL_10, TARIFS_UTIL_20 } from "../constants/config";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(((theme) => ({
     ...styles,
     ...productStyles,
     title: {
@@ -111,22 +111,18 @@ const useStyles = makeStyles((theme) => ({
     highlightRow: {
         backgroundColor: "rgba(244, 67, 54, 0.05)"
     }
-}));
-
-// Les données de tarifs sont définies dans constants/config.ts
+})) as any);
 
 export default function TarifsPage(props: object) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const classes = (useStyles as any)();
     return (
         <div>
-            <Head>
-                <title>Nos Tarifs de Convoyage | V-Car Transport - Prix Kilométriques</title>
-                <meta
-                    name="description"
-                    content="Découvrez nos tarifs de convoyage kilométriques HT. Péages et assurance W garage inclus. Prix compétitifs pour véhicules légers et utilitaires."
-                />
-            </Head>
+            <SEO 
+                title="Tarifs de Convoyage | Prix Kilométriques HT" 
+                description="Découvrez nos tarifs de convoyage kilométriques HT. Péages et assurance W garage inclus. Prix compétitifs pour véhicules légers et utilitaires partout en France."
+                canonical="/tarifs"
+            />
             <Header
                 color="white"
                 brand={BRAND.shortName}

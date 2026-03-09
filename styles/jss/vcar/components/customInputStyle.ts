@@ -84,6 +84,6 @@ const customInputStyle = {
       opacity: "1"
     }
   }
-};
+} as const;
 
 export default customInputStyle;

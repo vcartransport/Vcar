@@ -1,5 +1,4 @@
 import React from "react";
-import Head from "next/head";
 import classNames from "classnames";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -11,6 +10,7 @@ import GridItem from "../components/Grid/GridItem";
 import Button from "../components/CustomButtons/Button";
 import HeaderLinks from "../components/Header/HeaderLinks";
 import Parallax from "../components/Parallax/Parallax";
+import SEO from "../components/SEO/SEO";
 
 // Sections de la page d'accueil
 import ProductSection from "../sections/home/ProductSection";
@@ -28,13 +28,11 @@ export default function HomePage(props: object) {
   const classes = useStyles();
   return (
     <div>
-      <Head>
-        <title>V-Car Transport | Convoyage de Véhicules Professionnel en France</title>
-        <meta
-          name="description"
-          content="Confiez le transport de votre véhicule à V-Car Transport. Convoyage professionnel partout en France, chauffeurs expérimentés et assurance tous risques incluse."
-        />
-      </Head>
+      <SEO 
+        title="V-Car Transport | Convoyage de Véhicules Professionnel en France" 
+        description="Confiez le transport de votre véhicule à V-Car Transport. Convoyage professionnel partout en France, chauffeurs expérimentés et assurance tous risques incluse (W garage)."
+        canonical="/"
+      />
       <Header
         color="transparent"
         routes={[]}

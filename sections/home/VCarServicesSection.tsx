@@ -9,8 +9,7 @@ import AttachMoney from "@material-ui/icons/AttachMoney";
 
 import styles from "../../styles/jss/vcar/pages/landingPageSections/vcarServicesStyle";
 
-// @ts-ignore
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles(styles as any);
 
 export default function VCarServicesSection() {
     const classes = useStyles();

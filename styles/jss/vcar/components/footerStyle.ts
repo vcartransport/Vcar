@@ -94,5 +94,6 @@ const footerStyle = {
     color: "rgba(255, 255, 255, 0.6)",
     lineHeight: "1.6",
   }
-};
+} as const;
+
 export default footerStyle;
