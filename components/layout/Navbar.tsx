@@ -24,6 +24,8 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileZonesOpen, setMobileZonesOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,7 +76,7 @@ export default function Navbar() {
               onMouseEnter={() => setServicesOpen(true)}
               onMouseLeave={() => setServicesOpen(false)}
             >
-              <button className="flex items-center gap-1 text-xs uppercase tracking-widest text-brand-silver hover:text-brand-champagne transition-colors">
+              <button className="flex items-center gap-1 text-xs uppercase tracking-widest text-brand-silver hover:text-brand-champagne transition-colors p-2 -ml-2">
                 Services
                 <ChevronDown size={12} className={`transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
               </button>
@@ -85,7 +87,7 @@ export default function Navbar() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 8 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full right-0 mt-4 w-72 bg-brand-black/95 backdrop-blur-md border border-brand-graphite shadow-xl"
+                    className="absolute top-full right-0 mt-2 w-72 bg-brand-black/95 backdrop-blur-md border border-brand-graphite shadow-xl"
                   >
                     <div className="p-4">
                       <span className="text-brand-champagne text-[10px] uppercase tracking-widest block mb-3 px-3">Nos services</span>
@@ -128,9 +130,10 @@ export default function Navbar() {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-brand-white focus:outline-none"
+              className="text-brand-white p-2 -mr-2 focus:outline-none"
+              aria-label="Toggle menu"
             >
-              {isOpen ? <X size={28} strokeWidth={1} /> : <Menu size={28} strokeWidth={1} />}
+              {isOpen ? <X size={32} strokeWidth={1} /> : <Menu size={32} strokeWidth={1} />}
             </button>
           </div>
         </div>
@@ -141,50 +144,93 @@ export default function Navbar() {
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
+            animate={{ opacity: 1, height: "100vh" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-brand-black border-b border-brand-graphite overflow-hidden"
+            className="md:hidden fixed top-[72px] left-0 w-full bg-brand-black/95 backdrop-blur-md border-t border-brand-graphite overflow-y-auto pb-32"
           >
-            <div className="px-4 pt-4 pb-8 space-y-4 flex flex-col">
+            <div className="px-4 pt-4 pb-8 flex flex-col">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-sm uppercase tracking-widest text-brand-silver hover:text-brand-champagne block"
+                  className="text-sm md:text-base uppercase tracking-widest text-brand-silver hover:text-brand-champagne block py-5 border-b border-brand-graphite/50 text-right pr-2"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}
                 </Link>
               ))}
-              <div className="border-t border-brand-graphite pt-4 mt-2">
-                <span className="text-brand-champagne text-[10px] uppercase tracking-widest block mb-3">Services</span>
-                {serviceLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="text-xs text-brand-silver/70 hover:text-brand-champagne block py-1.5"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {link.name}
-                  </Link>
-                ))}
+              
+              {/* Accordion for Services */}
+              <div className="border-b border-brand-graphite/50">
+                <button 
+                  onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                  className="w-full flex justify-end items-center gap-3 py-5 text-sm md:text-base uppercase tracking-widest text-brand-silver hover:text-brand-champagne focus:outline-none pr-2"
+                >
+                  Services
+                  <ChevronDown size={18} className={`transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} />
+                </button>
+                <AnimatePresence>
+                  {mobileServicesOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pb-3 space-y-1">
+                        {serviceLinks.map((link) => (
+                          <Link
+                            key={link.href}
+                            href={link.href}
+                            className="text-sm text-brand-silver/80 hover:text-brand-champagne block py-4 text-right pr-8"
+                            onClick={() => setIsOpen(false)}
+                          >
+                            {link.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
-              <div className="border-t border-brand-graphite pt-4 mt-2">
-                <span className="text-brand-champagne text-[10px] uppercase tracking-widest block mb-3">Zones</span>
-                {zoneLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="text-xs text-brand-silver/70 hover:text-brand-champagne block py-1.5"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {link.name}
-                  </Link>
-                ))}
+
+              {/* Accordion for Zones */}
+              <div className="border-b border-brand-graphite/50">
+                <button 
+                  onClick={() => setMobileZonesOpen(!mobileZonesOpen)}
+                  className="w-full flex justify-end items-center gap-3 py-5 text-sm md:text-base uppercase tracking-widest text-brand-silver hover:text-brand-champagne focus:outline-none pr-2"
+                >
+                  Zones d'intervention
+                  <ChevronDown size={18} className={`transition-transform ${mobileZonesOpen ? "rotate-180" : ""}`} />
+                </button>
+                <AnimatePresence>
+                  {mobileZonesOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pb-3 space-y-1">
+                        {zoneLinks.map((link) => (
+                          <Link
+                            key={link.href}
+                            href={link.href}
+                            className="text-sm text-brand-silver/80 hover:text-brand-champagne block py-4 text-right pr-8"
+                            onClick={() => setIsOpen(false)}
+                          >
+                            {link.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
+
               <Link
                 href="/devis"
-                className="text-sm uppercase tracking-widest text-center text-brand-black bg-brand-champagne px-6 py-4 rounded block mt-4"
+                className="text-sm md:text-base uppercase tracking-widest text-center text-brand-black bg-brand-champagne px-6 py-5 rounded block mt-8 font-medium"
                 onClick={() => setIsOpen(false)}
               >
                 Demander un devis
