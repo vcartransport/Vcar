@@ -1,5 +1,8 @@
-export const metadata = {
-  title: "Politique de cookies | Striking Camp",
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Politique de Cookies",
+  robots: { index: false, follow: true },
 };
 
 export default function CookiesPage() {

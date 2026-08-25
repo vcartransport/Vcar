@@ -1,60 +1,90 @@
 import Link from "next/link";
-import { siteData } from "@/data/content";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-black border-t border-brand-white/10 pt-16 pb-8">
+    <footer className="bg-brand-black border-t border-brand-graphite pt-24 pb-12 text-brand-silver">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-          <div className="col-span-1 md:col-span-1">
-            <Link href="/" className="text-2xl font-heading font-bold uppercase tracking-widest text-brand-white block mb-4">
-              STRIKING <span className="text-brand-blue">CAMP</span>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
+
+          {/* Col 1 - Brand */}
+          <div>
+            <Link href="/" className="inline-block text-2xl font-heading font-light uppercase tracking-[0.2em] text-brand-white mb-8">
+              V<span className="text-brand-champagne mx-1">-</span>CAR
             </Link>
-            <p className="text-brand-white/60 text-sm">
-              {siteData.global.disciplines}<br/>
-              {siteData.global.location}
+            <p className="text-brand-silver/70 text-sm leading-relaxed max-w-sm font-light">
+              Votre partenaire de confiance pour le convoyage automobile à Marseille et partout en France. Sécurité, ponctualité et professionnalisme.
             </p>
           </div>
-          
+
+          {/* Col 2 - Services */}
           <div>
-            <h4 className="text-brand-white font-bold uppercase tracking-wider mb-6 text-sm">Navigation</h4>
-            <ul className="space-y-4">
-              <li><Link href="/" className="text-brand-white/60 hover:text-brand-blue transition-colors text-sm">Accueil</Link></li>
-              <li><Link href="#le-club" className="text-brand-white/60 hover:text-brand-blue transition-colors text-sm">Le Club</Link></li>
-              <li><Link href="#le-coach" className="text-brand-white/60 hover:text-brand-blue transition-colors text-sm">Le Coach</Link></li>
-              <li><Link href="#contact" className="text-brand-white/60 hover:text-brand-blue transition-colors text-sm">Contact</Link></li>
+            <h4 className="text-brand-champagne text-xs font-bold uppercase tracking-widest mb-8">Services</h4>
+            <ul className="space-y-3">
+              <li><Link href="/convoyage-automobile" className="text-brand-silver/70 hover:text-brand-white transition-colors text-sm font-light">Convoyage automobile</Link></li>
+              <li><Link href="/transport-flotte-vehicules" className="text-brand-silver/70 hover:text-brand-white transition-colors text-sm font-light">Flottes automobiles</Link></li>
+              <li><Link href="/transport-prive" className="text-brand-silver/70 hover:text-brand-white transition-colors text-sm font-light">Transport privé</Link></li>
             </ul>
           </div>
 
+          {/* Col 3 - Zones & liens */}
           <div>
-            <h4 className="text-brand-white font-bold uppercase tracking-wider mb-6 text-sm">Informations</h4>
-            <ul className="space-y-4">
-              <li><Link href="/mentions-legales" className="text-brand-white/60 hover:text-brand-white transition-colors text-sm">Mentions légales</Link></li>
-              <li><Link href="/confidentialite" className="text-brand-white/60 hover:text-brand-white transition-colors text-sm">Politique de confidentialité</Link></li>
-              <li><Link href="/cookies" className="text-brand-white/60 hover:text-brand-white transition-colors text-sm">Politique de cookies</Link></li>
+            <h4 className="text-brand-champagne text-xs font-bold uppercase tracking-widest mb-8">Zones desservies</h4>
+            <ul className="space-y-3">
+              <li><Link href="/convoyage-automobile-marseille" className="text-brand-silver/70 hover:text-brand-white transition-colors text-sm font-light">Marseille</Link></li>
+              <li><Link href="/convoyage-cote-d-azur" className="text-brand-silver/70 hover:text-brand-white transition-colors text-sm font-light">Côte d&apos;Azur</Link></li>
+              <li><Link href="/convoyage-nice" className="text-brand-silver/70 hover:text-brand-white transition-colors text-sm font-light">Nice</Link></li>
+              <li><Link href="/convoyage-cannes" className="text-brand-silver/70 hover:text-brand-white transition-colors text-sm font-light">Cannes</Link></li>
+              <li><Link href="/convoyage-monaco" className="text-brand-silver/70 hover:text-brand-white transition-colors text-sm font-light">Monaco</Link></li>
+              <li><Link href="/convoyage-saint-tropez" className="text-brand-silver/70 hover:text-brand-white transition-colors text-sm font-light">Saint-Tropez</Link></li>
             </ul>
-          </div>
-
-          <div>
-            <h4 className="text-brand-white font-bold uppercase tracking-wider mb-6 text-sm">Social</h4>
-            <div className="flex space-x-4">
-              <a href={siteData.contact.instagram} target="_blank" rel="noopener noreferrer" className="text-brand-white/60 hover:text-brand-blue transition-colors">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-              </a>
-              <a href={siteData.contact.youtube} target="_blank" rel="noopener noreferrer" className="text-brand-white/60 hover:text-brand-blue transition-colors">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
-              </a>
+            <div className="mt-8 pt-6 border-t border-brand-graphite">
+              <ul className="space-y-3">
+                <li><Link href="/about" className="text-brand-silver/70 hover:text-brand-white transition-colors text-sm font-light">À propos</Link></li>
+                <li><Link href="/tarifs" className="text-brand-silver/70 hover:text-brand-white transition-colors text-sm font-light">Tarifs</Link></li>
+                <li><Link href="/devis" className="text-brand-silver/70 hover:text-brand-white transition-colors text-sm font-light">Demander un devis</Link></li>
+              </ul>
             </div>
           </div>
+
+          {/* Col 4 - Contact */}
+          <div>
+            <h4 className="text-brand-champagne text-xs font-bold uppercase tracking-widest mb-8">Nous Contacter</h4>
+            <ul className="space-y-5">
+              <li className="flex items-start">
+                <MapPin className="text-brand-champagne mr-4 shrink-0" size={18} strokeWidth={1.5} />
+                <span className="text-brand-silver/70 text-sm font-light leading-relaxed">
+                  24 avenue du Prado<br />13006 Marseille
+                </span>
+              </li>
+              <li className="flex items-center">
+                <Phone className="text-brand-champagne mr-4 shrink-0" size={18} strokeWidth={1.5} />
+                <a href="tel:+33765595877" className="text-brand-silver/70 hover:text-brand-white transition-colors text-sm font-light">
+                  07 65 59 58 77
+                </a>
+              </li>
+              <li className="flex items-center">
+                <Mail className="text-brand-champagne mr-4 shrink-0" size={18} strokeWidth={1.5} />
+                <a href="mailto:contact@v-car.company" className="text-brand-silver/70 hover:text-brand-white transition-colors text-sm font-light">
+                  contact@v-car.company
+                </a>
+              </li>
+              <li className="text-brand-silver/40 text-xs font-light mt-6">
+                Lun - Sam: 08h00 - 19h00
+              </li>
+            </ul>
+          </div>
         </div>
-        
-        <div className="border-t border-brand-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-brand-white/40 text-xs text-center md:text-left">
-            {siteData.global.copyright}
+
+        {/* Bottom */}
+        <div className="border-t border-brand-graphite pt-8 flex flex-col md:flex-row justify-between items-center text-brand-silver/40 text-xs font-light">
+          <p className="mb-4 md:mb-0">
+            &copy; 2026 V-car Convoyage. Tous droits réservés.
           </p>
-          <p className="text-brand-white/40 text-xs mt-4 md:mt-0">
-            Design & Développement par <a href="https://mickaelcode.com/" target="_blank" rel="noopener noreferrer" className="text-brand-white hover:text-brand-blue transition-colors">Mickael</a>
-          </p>
+          <div className="flex gap-6">
+            <Link href="/mentions-legales" className="hover:text-brand-champagne transition-colors">Mentions légales</Link>
+            <Link href="/confidentialite" className="hover:text-brand-champagne transition-colors">Confidentialité</Link>
+          </div>
         </div>
       </div>
     </footer>
