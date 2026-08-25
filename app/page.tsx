@@ -104,7 +104,7 @@ export default function Home() {
             </h1>
 
             <p className="text-lg md:text-xl text-brand-silver/80 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
-              Confiez-nous le transport de votre véhicule en toute sérénité. Que vous soyez un particulier ou un professionnel, nous assurons un service premium partout en France.
+              Confiez-nous le transport de votre véhicule en toute sérénité. Que vous soyez un particulier ou un professionnel, nous assurons un service premium toutes distances, partout en France (Paris, Lyon, Bordeaux, Toulouse, Nantes, Clermont-Ferrand...).
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
@@ -202,7 +202,7 @@ export default function Home() {
                 Convoyage par la Route
               </h3>
               <p className="text-brand-silver/60 font-light leading-relaxed">
-                Nous convoyons tous les véhicules : citadines, berlines, SUV, utilitaires et véhicules de flotte professionnelle (Peugeot, Renault, BMW, Mercedes, Audi, Volkswagen, Nissan, etc.). Un chauffeur professionnel prend en charge votre véhicule et le conduit à destination.
+                Nous convoyons tous les véhicules toutes distances. Un chauffeur professionnel prend en charge votre véhicule avec notre application propriétaire d'état des lieux pour une traçabilité parfaite.
               </p>
             </Link>
 
@@ -237,20 +237,18 @@ export default function Home() {
               Nos Zones d&apos;Intervention
             </h2>
             <p className="text-brand-silver/70 text-lg font-light leading-relaxed">
-              Basés à{" "}
+              Depuis notre base à{" "}
               <Link href="/convoyage-automobile-marseille" className="text-brand-champagne hover:underline">
                 Marseille
               </Link>
-              , nous intervenons sur l&apos;ensemble du territoire français avec
-              une expertise particulière sur la{" "}
+              , nous assurons des convoyages sur <strong>toute la France</strong> (Paris, Lyon, Bordeaux, Toulouse, Nantes, Clermont-Ferrand), avec une forte présence sur la{" "}
               <Link href="/convoyage-cote-d-azur" className="text-brand-champagne hover:underline">
                 Côte d&apos;Azur
               </Link>
-              ,{" "}
+              {" "}et{" "}
               <Link href="/convoyage-monaco" className="text-brand-champagne hover:underline">
                 Monaco
-              </Link>{" "}
-              et la région Provence-Alpes-Côte d&apos;Azur.
+              </Link>.
             </p>
           </div>
 

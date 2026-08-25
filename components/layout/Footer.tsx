@@ -13,7 +13,7 @@ export default function Footer() {
               V<span className="text-brand-champagne mx-1">-</span>CAR
             </Link>
             <p className="text-brand-silver/70 text-sm leading-relaxed max-w-sm font-light">
-              Votre partenaire de confiance pour le convoyage automobile à Marseille et partout en France. Sécurité, ponctualité et professionnalisme.
+              Votre partenaire de confiance pour le convoyage automobile. Depuis Marseille, nous intervenons sur toute la France (Paris, Lyon, Bordeaux, Toulouse, Nantes, Clermont-Ferrand...).
             </p>
           </div>
 
@@ -42,6 +42,7 @@ export default function Footer() {
               <ul className="space-y-3">
                 <li><Link href="/about" className="text-brand-silver/70 hover:text-brand-white transition-colors text-sm font-light">À propos</Link></li>
                 <li><Link href="/tarifs" className="text-brand-silver/70 hover:text-brand-white transition-colors text-sm font-light">Tarifs</Link></li>
+                <li><Link href="/application" className="text-brand-silver/70 hover:text-brand-white transition-colors text-sm font-light">Application</Link></li>
                 <li><Link href="/devis" className="text-brand-silver/70 hover:text-brand-white transition-colors text-sm font-light">Demander un devis</Link></li>
               </ul>
             </div>
@@ -78,9 +79,15 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="border-t border-brand-graphite pt-8 flex flex-col md:flex-row justify-between items-center text-brand-silver/40 text-xs font-light">
-          <p className="mb-4 md:mb-0">
-            &copy; 2026 V-car Convoyage. Tous droits réservés.
-          </p>
+          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 mb-4 md:mb-0">
+            <p>
+              &copy; 2026 V-car Convoyage. Tous droits réservés.
+            </p>
+            <span className="hidden md:inline text-brand-graphite">|</span>
+            <p>
+              Développé et design par <a href="https://mickaelcode.com/" target="_blank" rel="noopener noreferrer" className="text-[#ff003c] font-medium hover:text-white transition-colors" style={{ textShadow: '0 0 8px rgba(255,0,60,0.6)' }}>Mickael</a>
+            </p>
+          </div>
           <div className="flex gap-6">
             <Link href="/mentions-legales" className="hover:text-brand-champagne transition-colors">Mentions légales</Link>
             <Link href="/confidentialite" className="hover:text-brand-champagne transition-colors">Confidentialité</Link>

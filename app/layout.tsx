@@ -97,6 +97,12 @@ const organizationSchema = {
   },
   areaServed: [
     { "@type": "City", name: "Marseille" },
+    { "@type": "City", name: "Paris" },
+    { "@type": "City", name: "Lyon" },
+    { "@type": "City", name: "Bordeaux" },
+    { "@type": "City", name: "Toulouse" },
+    { "@type": "City", name: "Nantes" },
+    { "@type": "City", name: "Clermont-Ferrand" },
     { "@type": "City", name: "Nice" },
     { "@type": "City", name: "Cannes" },
     { "@type": "City", name: "Monaco" },

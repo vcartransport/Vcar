@@ -79,7 +79,7 @@ export default function ConvoyageAutomobilePage() {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {[
                 { step: "01", title: "Demande de devis", desc: "Décrivez votre besoin : véhicule, départ, arrivée, délai. Nous vous adressons un devis personnalisé sous 24 heures." },
-                { step: "02", title: "Prise en charge", desc: "Notre chauffeur se présente à l'adresse convenue. Un état des lieux détaillé est réalisé et documenté avant le départ." },
+                { step: "02", title: "Prise en charge", desc: "Notre chauffeur se présente à l'adresse convenue. Un état des lieux détaillé est réalisé via notre application propriétaire avant le départ." },
                 { step: "03", title: "Acheminement", desc: "Votre véhicule est conduit avec soin par un professionnel expérimenté. Vous pouvez suivre l'avancement du transport." },
                 { step: "04", title: "Remise en main propre", desc: "À l'arrivée, un nouvel état des lieux confirme l'intégrité du véhicule. Remise des clés et des documents." },
               ].map((item) => (
@@ -134,7 +134,7 @@ export default function ConvoyageAutomobilePage() {
               Partout en France, depuis Marseille
             </h2>
             <p className="text-brand-silver/60 font-light text-lg text-center max-w-2xl mx-auto mb-12">
-              Basés à <Link href="/convoyage-automobile-marseille" className="text-brand-champagne hover:underline">Marseille</Link>, nous assurons des convoyages sur l'ensemble du territoire, avec une réactivité particulière sur la <Link href="/convoyage-cote-d-azur" className="text-brand-champagne hover:underline">Côte d'Azur</Link>, <Link href="/convoyage-monaco" className="text-brand-champagne hover:underline">Monaco</Link>, <Link href="/convoyage-nice" className="text-brand-champagne hover:underline">Nice</Link>, <Link href="/convoyage-cannes" className="text-brand-champagne hover:underline">Cannes</Link> et <Link href="/convoyage-saint-tropez" className="text-brand-champagne hover:underline">Saint-Tropez</Link>.
+              Basés à <Link href="/convoyage-automobile-marseille" className="text-brand-champagne hover:underline">Marseille</Link>, nous assurons des convoyages sur l'ensemble du territoire et toutes distances (Paris, Lyon, Bordeaux, Toulouse, Nantes, Clermont-Ferrand...), avec une réactivité particulière sur la <Link href="/convoyage-cote-d-azur" className="text-brand-champagne hover:underline">Côte d'Azur</Link>, <Link href="/convoyage-monaco" className="text-brand-champagne hover:underline">Monaco</Link>, <Link href="/convoyage-nice" className="text-brand-champagne hover:underline">Nice</Link>, <Link href="/convoyage-cannes" className="text-brand-champagne hover:underline">Cannes</Link> et <Link href="/convoyage-saint-tropez" className="text-brand-champagne hover:underline">Saint-Tropez</Link>.
             </p>
           </div>
 
