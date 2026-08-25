@@ -16,13 +16,13 @@ export default function ApplicationContent() {
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <Breadcrumbs
-            items={[
-              { label: "Accueil", href: "/" },
-              { label: "Application", href: "/application" },
-            ]}
-            className="mb-8"
-          />
+          <div className="mb-8">
+            <Breadcrumbs
+              items={[
+                { label: "Application", href: "/application" },
+              ]}
+            />
+          </div>
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div

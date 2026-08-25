@@ -5,14 +5,38 @@ import { useState } from "react";
 export default function DevisForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("loading");
     
-    // Simulate API call
-    setTimeout(() => {
-      setStatus("success");
-    }, 1500);
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("name"),
+      phone: formData.get("phone"),
+      email: formData.get("email"),
+      departure: formData.get("departure"),
+      arrival: formData.get("arrival"),
+      model: formData.get("model"),
+      deadline: formData.get("deadline"),
+      message: formData.get("message"),
+    };
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      console.error(error);
+      setStatus("error");
+    }
   };
 
   if (status === "success") {
@@ -42,45 +66,45 @@ export default function DevisForm() {
       
       {status === "error" && (
         <div className="p-4 border border-red-500/30 text-red-400 text-sm font-light">
-          Une erreur est survenue lors de l&apos;envoi. Veuillez réessayer.
+          Une erreur est survenue lors de l&apos;envoi. Veuillez vérifier votre connexion et réessayer.
         </div>
       )}
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         <div>
           <label className="block text-xs uppercase tracking-widest text-brand-silver/50 mb-3">Nom *</label>
-          <input required type="text" className="w-full bg-transparent border-b border-brand-graphite py-3 text-brand-white font-light focus:outline-none focus:border-brand-champagne transition-colors" placeholder="Ex: Jean Dupont" />
+          <input required name="name" type="text" className="w-full bg-transparent border-b border-brand-graphite py-3 text-brand-white font-light focus:outline-none focus:border-brand-champagne transition-colors" placeholder="Ex: Jean Dupont" />
         </div>
         <div>
           <label className="block text-xs uppercase tracking-widest text-brand-silver/50 mb-3">Téléphone *</label>
-          <input required type="tel" className="w-full bg-transparent border-b border-brand-graphite py-3 text-brand-white font-light focus:outline-none focus:border-brand-champagne transition-colors" placeholder="Ex: 06 12 34 56 78" />
+          <input required name="phone" type="tel" className="w-full bg-transparent border-b border-brand-graphite py-3 text-brand-white font-light focus:outline-none focus:border-brand-champagne transition-colors" placeholder="Ex: 06 12 34 56 78" />
         </div>
       </div>
 
       <div>
         <label className="block text-xs uppercase tracking-widest text-brand-silver/50 mb-3">Email *</label>
-        <input required type="email" className="w-full bg-transparent border-b border-brand-graphite py-3 text-brand-white font-light focus:outline-none focus:border-brand-champagne transition-colors" placeholder="Ex: jean.dupont@email.com" />
+        <input required name="email" type="email" className="w-full bg-transparent border-b border-brand-graphite py-3 text-brand-white font-light focus:outline-none focus:border-brand-champagne transition-colors" placeholder="Ex: jean.dupont@email.com" />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         <div>
           <label className="block text-xs uppercase tracking-widest text-brand-silver/50 mb-3">Ville de départ *</label>
-          <input required type="text" className="w-full bg-transparent border-b border-brand-graphite py-3 text-brand-white font-light focus:outline-none focus:border-brand-champagne transition-colors" placeholder="Ville ou code postal" />
+          <input required name="departure" type="text" className="w-full bg-transparent border-b border-brand-graphite py-3 text-brand-white font-light focus:outline-none focus:border-brand-champagne transition-colors" placeholder="Ville ou code postal" />
         </div>
         <div>
           <label className="block text-xs uppercase tracking-widest text-brand-silver/50 mb-3">Ville d&apos;arrivée *</label>
-          <input required type="text" className="w-full bg-transparent border-b border-brand-graphite py-3 text-brand-white font-light focus:outline-none focus:border-brand-champagne transition-colors" placeholder="Ville ou code postal" />
+          <input required name="arrival" type="text" className="w-full bg-transparent border-b border-brand-graphite py-3 text-brand-white font-light focus:outline-none focus:border-brand-champagne transition-colors" placeholder="Ville ou code postal" />
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         <div>
           <label className="block text-xs uppercase tracking-widest text-brand-silver/50 mb-3">Modèle du Véhicule *</label>
-          <input required type="text" className="w-full bg-transparent border-b border-brand-graphite py-3 text-brand-white font-light focus:outline-none focus:border-brand-champagne transition-colors" placeholder="Ex: Porsche Panamera" />
+          <input required name="model" type="text" className="w-full bg-transparent border-b border-brand-graphite py-3 text-brand-white font-light focus:outline-none focus:border-brand-champagne transition-colors" placeholder="Ex: Porsche Panamera" />
         </div>
         <div>
           <label className="block text-xs uppercase tracking-widest text-brand-silver/50 mb-3">Délai souhaité *</label>
-          <select required className="w-full bg-transparent border-b border-brand-graphite py-3 text-brand-white font-light focus:outline-none focus:border-brand-champagne transition-colors appearance-none rounded-none">
+          <select required name="deadline" className="w-full bg-transparent border-b border-brand-graphite py-3 text-brand-white font-light focus:outline-none focus:border-brand-champagne transition-colors appearance-none rounded-none">
             <option value="" className="bg-brand-anthracite">Sélectionnez un délai</option>
             <option value="urgent" className="bg-brand-anthracite">Urgent (24/48h)</option>
             <option value="standard" className="bg-brand-anthracite">Standard (Moins d&apos;une semaine)</option>
@@ -91,20 +115,16 @@ export default function DevisForm() {
 
       <div>
         <label className="block text-xs uppercase tracking-widest text-brand-silver/50 mb-3">Informations complémentaires</label>
-        <textarea rows={3} className="w-full bg-transparent border-b border-brand-graphite py-3 text-brand-white font-light focus:outline-none focus:border-brand-champagne transition-colors resize-none" placeholder="Précisez toute information utile au transport..."></textarea>
+        <textarea name="message" rows={3} className="w-full bg-transparent border-b border-brand-graphite py-3 text-brand-white font-light focus:outline-none focus:border-brand-champagne transition-colors resize-none" placeholder="Précisez toute information utile au transport..."></textarea>
       </div>
 
       <div className="pt-8">
         <button 
           type="submit" 
           disabled={status === "loading"}
-          className={`w-full py-4 text-xs font-bold uppercase tracking-widest transition-all ${
-            status === "loading" 
-              ? "bg-brand-graphite text-brand-silver cursor-not-allowed"
-              : "bg-brand-champagne text-brand-black hover:bg-white"
-          }`}
+          className="w-full bg-brand-champagne text-brand-black text-sm uppercase tracking-widest font-semibold py-5 hover:bg-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {status === "loading" ? "Traitement..." : "Soumettre la demande"}
+          {status === "loading" ? "Envoi en cours..." : "Envoyer la demande"}
         </button>
       </div>
     </form>

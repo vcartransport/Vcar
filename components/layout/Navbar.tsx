@@ -154,84 +154,18 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-sm md:text-base uppercase tracking-widest text-brand-silver hover:text-brand-champagne block py-5 border-b border-brand-graphite/50 text-right pr-2"
+                  className="text-base md:text-lg uppercase tracking-widest text-brand-silver hover:text-brand-champagne block py-8 border-b border-brand-graphite/50 text-center font-medium w-full"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}
                 </Link>
               ))}
               
-              {/* Accordion for Services */}
-              <div className="border-b border-brand-graphite/50">
-                <button 
-                  onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                  className="w-full flex justify-end items-center gap-3 py-5 text-sm md:text-base uppercase tracking-widest text-brand-silver hover:text-brand-champagne focus:outline-none pr-2"
-                >
-                  Services
-                  <ChevronDown size={18} className={`transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} />
-                </button>
-                <AnimatePresence>
-                  {mobileServicesOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      className="overflow-hidden"
-                    >
-                      <div className="pb-3 space-y-1">
-                        {serviceLinks.map((link) => (
-                          <Link
-                            key={link.href}
-                            href={link.href}
-                            className="text-sm text-brand-silver/80 hover:text-brand-champagne block py-4 text-right pr-8"
-                            onClick={() => setIsOpen(false)}
-                          >
-                            {link.name}
-                          </Link>
-                        ))}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
 
-              {/* Accordion for Zones */}
-              <div className="border-b border-brand-graphite/50">
-                <button 
-                  onClick={() => setMobileZonesOpen(!mobileZonesOpen)}
-                  className="w-full flex justify-end items-center gap-3 py-5 text-sm md:text-base uppercase tracking-widest text-brand-silver hover:text-brand-champagne focus:outline-none pr-2"
-                >
-                  Zones d'intervention
-                  <ChevronDown size={18} className={`transition-transform ${mobileZonesOpen ? "rotate-180" : ""}`} />
-                </button>
-                <AnimatePresence>
-                  {mobileZonesOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      className="overflow-hidden"
-                    >
-                      <div className="pb-3 space-y-1">
-                        {zoneLinks.map((link) => (
-                          <Link
-                            key={link.href}
-                            href={link.href}
-                            className="text-sm text-brand-silver/80 hover:text-brand-champagne block py-4 text-right pr-8"
-                            onClick={() => setIsOpen(false)}
-                          >
-                            {link.name}
-                          </Link>
-                        ))}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
 
               <Link
                 href="/devis"
-                className="text-sm md:text-base uppercase tracking-widest text-center text-brand-black bg-brand-champagne px-6 py-5 rounded block mt-8 font-medium"
+                className="text-base md:text-lg uppercase tracking-widest text-center text-brand-black bg-brand-champagne px-6 py-6 block mt-8 font-semibold"
                 onClick={() => setIsOpen(false)}
               >
                 Demander un devis
