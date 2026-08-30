@@ -23,7 +23,6 @@ export default function AboutPage() {
       <div className="pt-6 pb-10 relative border-b border-brand-graphite">
         <div className="absolute inset-0 bg-brand-anthracite/30"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <span className="inline-block tracking-[0.3em] text-brand-champagne text-xs uppercase font-medium mb-6">Maison V-Car</span>
           <h1 className="text-4xl md:text-6xl font-heading font-light text-brand-white mb-8">L&apos;Excellence du Convoyage.</h1>
           <p className="text-brand-silver/60 text-lg max-w-2xl mx-auto font-light leading-relaxed">
             Une référence du transport automobile, basée à Marseille.
