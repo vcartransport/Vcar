@@ -116,10 +116,10 @@ export default function Home() {
               </Link>
               <div className="flex flex-col text-center sm:text-left sm:pl-4 sm:border-l border-brand-graphite">
                 <a
-                  href="tel:0765595877"
+                  href="tel:0660085556"
                   className="font-light text-brand-silver hover:text-brand-champagne transition-colors"
                 >
-                  07 65 59 58 77
+                  06 60 08 55 56
                 </a>
                 <a
                   href="mailto:contact@v-car.company"

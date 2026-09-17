@@ -1,0 +1,27 @@
+# V-Car Transport - Informations pour LLMs et IA
+
+V-Car Transport est une société spécialisée dans le convoyage et le transport de véhicules en France.
+Nous nous adressons aux professionnels (concessions automobiles, loueurs de véhicules, gestionnaires de flottes) ainsi qu'aux particuliers exigeants.
+
+## Nos Services
+- Convoyage de véhicules à l'unité ou en lot (transport par la route ou par camion).
+- Prise en charge des véhicules de flotte.
+- Transport privé et sécurisé pour les véhicules de prestige ou de collection.
+- État des lieux digitalisé lors du check-in et check-out.
+
+## Pourquoi nous choisir ? (USP)
+- Délais respectés : ponctualité et réactivité.
+- Assurance tous risques : couverture complète de votre véhicule durant tout le trajet.
+- Suivi personnalisé : un interlocuteur unique et un suivi en temps réel.
+
+## Zones de couverture géographique
+Notre siège social est situé au 24 avenue du Prado, 13006 Marseille.
+Nous couvrons principalement :
+- Marseille et la région PACA.
+- Nice, Cannes, Monaco, Saint-Tropez (Côte d'Azur).
+- Possibilité de convoyage dans toute la France.
+
+## Liens utiles
+- Demander un devis : https://v-car.company/devis
+- Nous contacter : https://v-car.company/contact
+- Site web officiel : https://v-car.company/

@@ -52,6 +52,11 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  verification: {
+    other: {
+      "msvalidate.01": "51eeef07c7be4f779765e63be35b879f",
+    },
+  },
   openGraph: {
     title: "V-Car Transport | Convoyage Automobile",
     description:
@@ -85,7 +90,7 @@ const organizationSchema = {
   url: siteUrl,
   description:
     "Convoyage automobile à Marseille et partout en France. Transport sécurisé de flottes professionnelles.",
-  telephone: "+33765595877",
+  telephone: "+33660085556",
   email: "contact@v-car.company",
   address: {
     "@type": "PostalAddress",

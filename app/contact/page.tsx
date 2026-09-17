@@ -6,7 +6,7 @@ import JsonLd from "@/components/ui/JsonLd";
 export const metadata: Metadata = {
   title: "Contact & Devis | Convoyage Automobile",
   description:
-    "Contactez V-Car Transport pour un devis de convoyage automobile personnalisé. Siège à Marseille, 24 avenue du Prado. Téléphone : 07 65 59 58 77.",
+    "Contactez V-Car Transport pour un devis de convoyage automobile personnalisé. Siège à Marseille, 24 avenue du Prado. Téléphone : 06 60 08 55 56.",
   alternates: { canonical: "https://v-car.company/contact" },
   openGraph: {
     title: "Contactez V-Car Transport | Devis Gratuit",
@@ -20,7 +20,7 @@ const localBusinessSchema = {
   "@type": "LocalBusiness",
   "@id": "https://v-car.company/#contact-local",
   name: "V-Car Transport",
-  telephone: "+33765595877",
+  telephone: "+33660085556",
   email: "contact@v-car.company",
   url: "https://v-car.company/contact",
   address: {
@@ -73,7 +73,7 @@ export default function ContactPage() {
 
                 <div>
                   <h3 className="text-xs uppercase tracking-widest text-brand-silver/50 mb-3">Téléphone</h3>
-                  <a href="tel:+33765595877" className="text-brand-white font-light hover:text-brand-champagne transition-colors">07 65 59 58 77</a>
+                  <a href="tel:+33660085556" className="text-brand-white font-light hover:text-brand-champagne transition-colors">06 60 08 55 56</a>
                 </div>
 
                 <div>

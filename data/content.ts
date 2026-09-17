@@ -9,8 +9,8 @@ export const siteData = {
     copyright: "© 2026 V-car Convoyage. Tous droits réservés.",
   },
   contact: {
-    phone: "07 65 59 58 77",
-    phoneLink: "+33765595877",
+    phone: "06 60 08 55 56",
+    phoneLink: "+33660085556",
     email: "contact@v-car.company",
   },
   address: {

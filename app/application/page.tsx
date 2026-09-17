@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import ApplicationContent from "./ApplicationContent";
+import JsonLd from "@/components/ui/JsonLd";
 
 export const metadata: Metadata = {
   title: "Application V-Car Transport | L'état des lieux nouvelle génération",
@@ -12,6 +13,25 @@ export const metadata: Metadata = {
   },
 };
 
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "V-Car État des Lieux",
+  operatingSystem: "iOS, Android",
+  applicationCategory: "BusinessApplication",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "EUR"
+  },
+  description: "Application propriétaire V-Car pour l'état des lieux digital et l'inspection de véhicules en convoyage."
+};
+
 export default function ApplicationPage() {
-  return <ApplicationContent />;
+  return (
+    <>
+      <JsonLd data={softwareSchema} />
+      <ApplicationContent />
+    </>
+  );
 }
